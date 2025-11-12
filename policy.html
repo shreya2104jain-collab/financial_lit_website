@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Policies</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f5f7fa;
+            color: #333;
+        }
+
+        header {
+            background-color: #34495e;
+            color: #fff;
+            padding: 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        header .logo {
+            font-size: 1.5em;
+            font-weight: bold;
+        }
+
+        nav {
+            display: flex;
+            gap: 20px;
+        }
+
+        nav a {
+            color: #fff;
+            text-decoration: none;
+            font-size: 1.1em;
+        }
+
+        nav a:hover {
+            color: #f39c12;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 30px auto;
+            padding: 20px;
+            background-color: #fff;
+            border-radius: 8px;
+            box-shadow: 0 3px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+        }
+
+        .card {
+            background: #ffffff;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            padding: 20px;
+            text-align: center;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            cursor: pointer;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+        }
+
+        .card h2 {
+            font-size: 1.2em;
+            margin-bottom: 15px;
+            color: #2c3e50;
+        }
+
+        footer {
+            background-color: #34495e;
+            color: #fff;
+            text-align: center;
+            padding: 15px;
+            margin-top: 50px;
+        }
+
+        footer a {
+            color: #f39c12;
+            text-decoration: none;
+            margin: 0 15px;
+        }
+
+        footer a:hover {
+            text-decoration: underline;
+        }
+
+        @media (max-width: 768px) {
+            .card {
+                padding: 15px;
+            }
+
+            header .logo {
+                font-size: 1.2em;
+            }
+
+            nav a {
+                font-size: 0.9em;
+                margin: 0 10px;
+            }
+
+            footer p {
+                font-size: 0.8em;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="logo">Financial Literacy Hub</div>
+        <nav>
+            <a href="home_wlc1.html">Home</a>
+            <a href="article.html">Articles</a>
+            <a href="policy.html">Policy</a>
+            <a href="video.html">Videos</a>
+            <a href="quiz.html">Quizzes</a>
+            <a href="search.html"><input type="text" placeholder="Search in site..."></a>
+
+        </nav>
+    </header>
+
+    <div class="container">
+        <h1 style="text-align: center; margin-bottom: 30px;">Policies</h1>
+        <div class="grid">
+            <div class="card" onclick="window.location.href='gov_policy.html'">
+                <h2>GOV</h2>
+            </div>
+            <div class="card" onclick="window.location.href='rbi_policy.html'">
+                <h2>RBI</h2>
+            </div>
+            <div class="card" onclick="window.location.href='sbi_policy.html'">
+                <h2>SBI</h2>
+            </div>
+            <div class="card" onclick="window.location.href='hdfc_policy.html'">
+                <h2>HDFC</h2>
+            </div>
+            <div class="card" onclick="window.location.href='central_policy.html'">
+                <h2>Central Bank</h2>
+            </div>
+            <div class="card" onclick="window.location.href='pnb_policy.html'">
+                <h2>PNB</h2>
+            </div>
+            <div class="card" onclick="window.location.href='bob_policy.html'">
+                <h2>BOB</h2>
+            </div>
+            <div class="card" onclick="window.location.href='yesbank_policy.html'">
+                <h2>Yes Bank</h2>
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <p>&copy; 2024 Financial Literacy Hub. All rights reserved.</p>
+        <p>
+            <a href="contact.html">Contact Us</a> |
+            <a href="tos.html">Terms of Service</a> |
+            <a href="pp.html">Privacy Policy</a>
+        </p>
+    </footer>
+
+</body>
+</html>

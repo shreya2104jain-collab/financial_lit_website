@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Responsive Financial Education</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Roboto', sans-serif;
+            background-color: #f5f5f5;
+            color: #333;
+        }
+
+        header {
+            background-color: #001f3f;
+            color: #fff;
+            padding: 1rem;
+            text-align: center;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 1rem;
+        }
+
+        .section {
+            margin: 2rem 0;
+            background-color: #fff;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            overflow: hidden;
+        }
+
+        .section h2 {
+            background-color: #001f3f;
+            color: #fff;
+            padding: 1rem;
+        }
+
+        .learning-modules {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 1rem;
+            padding: 1rem;
+        }
+
+        .module {
+            background-color: #f5f5f5;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            text-align: center;
+            overflow: hidden;
+        }
+
+        .module img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+        }
+
+        .module h3 {
+            font-size: 1.2rem;
+            margin: 0.5rem 0;
+        }
+
+        .module p {
+            padding: 0 1rem 1rem;
+        }
+
+        .subscribe-section {
+            text-align: center;
+            padding: 2rem;
+        }
+
+        .subscribe-section form {
+            margin-top: 1rem;
+        }
+
+        .subscribe-section input {
+            padding: 0.5rem;
+            margin: 0.5rem;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            width: 200px;
+        }
+
+        .subscribe-section button {
+            padding: 0.5rem 1rem;
+            background-color: #001f3f;
+            color: #fff;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+
+        .profile-section {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            padding: 2rem;
+        }
+
+        .profile-card {
+            background-color: #f5f5f5;
+            padding: 1rem;
+            border-radius: 8px;
+            text-align: center;
+        }
+
+        .profile-card img {
+            border-radius: 50%;
+            width: 100px;
+            height: 100px;
+        }
+
+        .profile-card h4 {
+            margin-top: 1rem;
+            font-size: 1.2rem;
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <h1>Welcome to Financial Literacy Education</h1>
+</header>
+
+<div class="container">
+    <!-- Learning Modules Section -->
+    <section class="section">
+        <h2>Interactive Learning Modules</h2>
+        <div class="learning-modules">
+            <div class="module">
+                <img src="https://via.placeholder.com/300x200" alt="Budgeting Basics">
+                <h3>Budgeting Basics</h3>
+                <p>Learn how to create and stick to a budget to achieve your financial goals.</p>
+            </div>
+            <div class="module">
+                <img src="https://via.placeholder.com/300x200" alt="Investment Strategies">
+                <h3>Investment Strategies</h3>
+                <p>Explore different investment options and understand risk management.</p>
+            </div>
+            <div class="module">
+                <img src="https://via.placeholder.com/300x200" alt="Debt Management">
+                <h3>Debt Management</h3>
+                <p>Discover ways to effectively manage and reduce debt for financial freedom.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Subscribe Section -->
+    <section class="section subscribe-section">
+        <h2>Subscribe for Updates</h2>
+        <p>Stay informed with our latest articles and videos.</p>
+        <form>
+            <input type="email" placeholder="Enter your email" required>
+            <button type="submit">Subscribe</button>
+        </form>
+    </section>
+
+    <!-- Profile Section -->
+    <section class="section">
+        <h2>Your Profile</h2>
+        <div class="profile-section">
+            <div class="profile-card">
+                <img src="https://via.placeholder.com/100" alt="User">
+                <h4>Username</h4>
+                <p>useremail@example.com</p>
+            </div>
+            <div class="profile-card">
+                <h4>Quiz Stats</h4>
+                <p>Quizzes Attempted: 5</p>
+                <p>Correct Answers: 18</p>
+                <p>Total Questions: 25</p>
+            </div>
+        </div>
+    </section>
+</div>
+
+</body>
+</html>

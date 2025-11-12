@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Financial Literacy Hub</title>
+    <style>
+        /* General Styles */
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        header {
+            background-color: #333;
+            color: #fff;
+            padding: 10px 20px;
+            text-align: center;
+        }
+
+        .navbar {
+            display: flex;
+            justify-content: center;
+            list-style: none;
+            margin: 0;
+            padding: 0;
+        }
+
+        .navbar li {
+            margin: 0 10px;
+        }
+
+        .navbar a {
+            color: white;
+            text-decoration: none;
+            font-size: 16px;
+        }
+
+        .navbar input {
+            padding: 5px;
+            border: none;
+            border-radius: 5px;
+        }
+
+        .content {
+            padding: 20px;
+            text-align: center;
+        }
+
+        .tiles {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 20px;
+            margin-top: 20px;
+        }
+
+        .tile {
+            background-color: #f4f4f4;
+            border: 1px solid #ddd;
+            border-radius: 10px;
+            padding: 20px;
+            text-align: center;
+            transition: transform 0.3s;
+        }
+
+        .tile:hover {
+            transform: scale(1.05);
+            background-color: #eaeaea;
+        }
+
+        footer {
+            background-color: #333;
+            color: white;
+            text-align: center;
+            padding: 10px 0;
+            margin-top: 20px;
+        }
+
+        footer ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+        }
+
+        footer ul li a {
+            color: white;
+            text-decoration: none;
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <h1>Financial Literacy Hub</h1>
+        <nav>
+            <ul class="navbar">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#articles">Articles</a></li>
+                <li><a href="#videos">Videos</a></li>
+                <li><a href="#quizzes">Quizzes</a></li>
+                <li><input type="text" placeholder="Search..."></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Home Section -->
+    <section id="home" class="content">
+        <h2>Welcome to Financial Literacy Learning</h2>
+        <div class="tiles">
+            <div class="tile">
+                <h3>Understanding Budgeting</h3>
+                <p>Learn to plan your budget effectively.</p>
+            </div>
+            <div class="tile">
+                <h3>Investment Basics</h3>
+                <p>Discover the fundamentals of smart investing.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Policies Section -->
+    <section id="articles" class="content">
+        <h2>Policies</h2>
+        <div class="tiles">
+            <div class="tile">GOV</div>
+            <div class="tile">RBI</div>
+            <div class="tile">SBI</div>
+            <div class="tile">Central Bank</div>
+            <div class="tile">HDFC</div>
+            <div class="tile">PNB</div>
+            <div class="tile">BOB</div>
+            <div class="tile">Yes Bank</div>
+        </div>
+    </section>
+
+    <!-- Quiz Section -->
+    <section id="quizzes" class="content">
+        <h2>Quiz Topics</h2>
+        <div class="tiles">
+            <div class="tile">Topic1</div>
+            <div class="tile">Topic2</div>
+            <div class="tile">Topic3</div>
+            <div class="tile">Topic4</div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <ul>
+            <li><a href="#">Contact Us</a></li>
+            <li><a href="#">Terms of Service</a></li>
+            <li><a href="#">Privacy Policy</a></li>
+        </ul>
+    </footer>
+</body>
+</html>

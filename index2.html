@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Financial Literacy Education</title>
+    <style>
+        /* General Reset */
+        body, html {
+            margin: 0;
+            padding: 0;
+            font-family: 'Arial', sans-serif;
+            line-height: 1.6;
+            background-color: #ffffff; /* White background */
+            color: #001f3f; /* Navy blue text */
+        }
+
+        /* Container */
+        .container {
+            max-width: 1200px;
+            margin: auto;
+            padding: 20px;
+        }
+
+        /* Hero Section */
+        .hero {
+            text-align: center;
+            padding: 60px 20px;
+            background-color: #001f3f; /* Navy blue background */
+            color: #ffffff; /* White text */
+            border-radius: 8px;
+            margin-bottom: 30px;
+        }
+
+        .hero h1 {
+            font-size: 2.5rem;
+            margin-bottom: 15px;
+            color: #ffffff;
+        }
+
+        .hero p {
+            font-size: 1.2rem;
+            margin-bottom: 25px;
+        }
+
+        .hero button {
+            margin: 5px;
+            padding: 12px 25px;
+            border: none;
+            cursor: pointer;
+            font-size: 1rem;
+            border-radius: 5px;
+            background-color: #ffffff; /* White buttons */
+            color: #001f3f; /* Navy blue text */
+            transition: 0.3s ease;
+        }
+
+        .hero button:hover {
+            background-color: #f0f0f0; /* Light gray hover */
+        }
+
+        /* Content Section */
+        .content {
+            text-align: center;
+        }
+
+        .content h2 {
+            font-size: 2rem;
+            margin-bottom: 20px;
+            color: #001f3f;
+        }
+
+        .content p {
+            margin-bottom: 20px;
+            color: #333;
+        }
+
+        .content button {
+            background-color: #001f3f; /* Navy blue button */
+            color: #ffffff;
+            border: none;
+            padding: 12px 20px;
+            font-size: 1rem;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: 0.3s ease;
+        }
+
+        .content button:hover {
+            background-color: #003366; /* Slightly lighter navy */
+        }
+
+        /* Modules Section */
+        .modules {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 20px;
+        }
+
+        .module {
+            background: #ffffff; /* White card background */
+            padding: 20px;
+            border: 1px solid #ccc; /* Light gray border */
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Light shadow */
+            width: 300px;
+            text-align: left;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .module:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 12px rgba(0, 0, 0, 0.15);
+        }
+
+        .module h3 {
+            font-size: 1.5rem;
+            color: #001f3f;
+            margin-bottom: 10px;
+        }
+
+        .module p {
+            font-size: 1rem;
+            color: #333;
+        }
+
+        /* Footer */
+        footer {
+            margin-top: 40px;
+            padding: 20px;
+            background-color: #001f3f; /* Navy blue footer */
+            text-align: center;
+            font-size: 0.9rem;
+            color: #ffffff;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .modules {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .hero h1 {
+                font-size: 2rem;
+            }
+
+            .content h2 {
+                font-size: 1.5rem;
+            }
+
+            .module {
+                width: 90%;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header class="hero">
+            <h1>Welcome to Financial Literacy Education</h1>
+            <p>Empower yourself with knowledge on managing finances effectively.</p>
+            <button>Subscribe for Updates</button>
+            <button>Get Started</button>
+        </header>
+        <main class="content">
+            <h2>Interactive Learning Modules</h2>
+            <p>Enhance your financial knowledge through engaging content.</p>
+            <button>Start Learning</button>
+            <div class="modules">
+                <div class="module">
+                    <h3>Budgeting Basics</h3>
+                    <p>Learn how to create and stick to a budget to achieve your financial goals.</p>
+                </div>
+                <div class="module">
+                    <h3>Investment Strategies</h3>
+                    <p>Explore different investment options and understand risk management.</p>
+                </div>
+                <div class="module">
+                    <h3>Saving Techniques</h3>
+                    <p>Discover practical methods to save money and grow your wealth effectively.</p>
+                </div>
+            </div>
+        </main>
+        <footer>
+            © 2024 Financial Literacy Education. All rights reserved.
+        </footer>
+    </div>
+</body>
+</html>
