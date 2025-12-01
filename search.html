@@ -1,45 +1,19 @@
-<?php
-// Header for AJAX search
-if (isset($_GET['query'])) {
-    header('Content-Type: application/json');
-
-    // Sample Data (replace with DB data if needed)
-    $data = [
-        ["title" => "Budgeting 101", "url" => "article.html#budgeting", "description" => "Learn the basics of budgeting to manage your expenses effectively."],
-        ["title" => "Investing for Beginners", "url" => "article.html#investing", "description" => "A simple guide to start investing in stocks and mutual funds."],
-        ["title" => "Understanding Credit", "url" => "article.html#credit", "description" => "Learn how credit works and how to maintain a good credit score."],
-        ["title" => "Retirement Planning", "url" => "article.html#retirement", "description" => "Plan ahead for a financially secure retirement."]
-    ];
-
-    $query = strtolower(trim($_GET['query'] ?? ''));
-    $results = array_filter($data, function ($item) use ($query) {
-        return strpos(strtolower($item['title']), $query) !== false ||
-               strpos(strtolower($item['description']), $query) !== false;
-    });
-
-    echo json_encode(array_values($results));
-    exit;
-}
-?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Search in Site - Financial Literacy Hub</title>
+
 <style>
-/* === Global Styles === */
 * {margin: 0; padding: 0; box-sizing: border-box;}
 body {
   font-family: 'Poppins', sans-serif;
   background-color: #f5f7fa;
   color: #333;
-  display: flex;
-  flex-direction: column;
-  min-height: 100vh;
 }
 
-/* === Header === */
+/* Header */
 header {
   background-color: #2c3e50;
   color: #fff;
@@ -48,160 +22,78 @@ header {
   justify-content: space-between;
   align-items: center;
   flex-wrap: wrap;
-  position: sticky;
-  top: 0;
-  z-index: 1000;
-  box-shadow: 0 2px 6px rgba(0,0,0,0.15);
 }
-header .logo {
-  font-size: 1.5rem;
-  font-weight: 700;
-}
-nav {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 1rem;
-}
-nav a {
-  color: #fff;
-  text-decoration: none;
-  font-weight: 500;
-  transition: color 0.3s;
-}
-nav a:hover, nav a.active {
-  color: #f39c12;
-}
+header .logo {font-size: 1.5rem; font-weight: 700;}
+nav {display: flex; gap: 1rem;}
+nav a {color: white; text-decoration: none; font-weight: 500;}
+nav a.active, nav a:hover {color: #f39c12;}
 
-/* === Search Section === */
+/* Search Section */
 .search-section {
   max-width: 850px;
   margin: 2rem auto;
-  background: #fff;
-  border-radius: 12px;
+  background: white;
   padding: 2rem;
+  border-radius: 12px;
   box-shadow: 0 4px 10px rgba(0,0,0,0.1);
-  animation: fadeIn 0.8s ease-in;
-  flex: 1;
 }
 .search-section h2 {
   text-align: center;
   color: #2c3e50;
-  font-size: 2rem;
   margin-bottom: 1.5rem;
 }
+
 .search-form {
   display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
   gap: 10px;
+  justify-content: center;
   margin-bottom: 2rem;
 }
-.search-form input[type="text"] {
-  flex: 1 1 60%;
-  min-width: 250px;
-  padding: 12px 15px;
-  font-size: 1rem;
-  border: 1px solid #ccc;
+.search-form input {
+  width: 60%;
+  padding: 12px;
   border-radius: 8px;
+  border: 1px solid #ccc;
   outline: none;
-  transition: 0.3s;
-}
-.search-form input:focus {
-  border-color: #f39c12;
-  box-shadow: 0 0 5px rgba(243,156,18,0.5);
 }
 .search-form button {
   padding: 12px 20px;
+  background: #f39c12;
   border: none;
-  border-radius: 8px;
-  background-color: #f39c12;
   color: white;
-  cursor: pointer;
-  font-weight: 600;
-  transition: background-color 0.3s;
-}
-.search-form button:hover {
-  background-color: #e67e22;
-}
-
-/* === Search Results === */
-.search-results {
-  background-color: #fff;
   border-radius: 8px;
-  padding: 1rem;
+  cursor: pointer;
 }
-.search-results h3 {
-  margin-bottom: 1rem;
-  color: #2c3e50;
-  font-size: 1.4rem;
-}
-.search-results ul {
-  list-style: none;
-  padding: 0;
-}
+.search-form button:hover {background: #e67e22;}
+
+/* Search Results */
+.search-results h3 {margin-bottom: 1rem;}
+.search-results ul {list-style: none;}
 .search-results li {
   padding: 12px;
   border-bottom: 1px solid #eee;
-  transition: background-color 0.3s, transform 0.2s;
 }
 .search-results li:hover {
-  background-color: #f9f9f9;
-  transform: translateX(4px);
+  background: #f9f9f9;
 }
-.search-results li a {
-  text-decoration: none;
+.search-results a {
   color: #2c3e50;
   font-weight: bold;
-  display: block;
-  margin-bottom: 4px;
-}
-.search-results li a:hover {
-  color: #f39c12;
-}
-.search-results p {
-  font-size: 0.95rem;
-  color: #555;
-}
-
-/* === Footer === */
-footer {
-  background-color: #2c3e50;
-  color: #fff;
-  text-align: center;
-  padding: 1.2rem 0;
-  font-size: 0.9rem;
-}
-footer a {
-  color: #f39c12;
   text-decoration: none;
-  margin: 0 6px;
 }
-footer a:hover {
-  text-decoration: underline;
-}
+.search-results a:hover {color: #f39c12;}
 
-/* === Animation === */
-@keyframes fadeIn {
-  from {opacity: 0; transform: translateY(20px);}
-  to {opacity: 1; transform: translateY(0);}
+/* Footer */
+footer {
+  background: #2c3e50;
+  color: white;
+  padding: 1.2rem;
+  text-align: center;
 }
-
-/* === Responsive === */
-@media (max-width: 768px) {
-  header {
-    flex-direction: column;
-    text-align: center;
-  }
-  .search-section {
-    margin: 1rem;
-    padding: 1.5rem;
-  }
-  .search-section h2 {
-    font-size: 1.6rem;
-  }
-}
+footer a {color: #f39c12; text-decoration: none;}
 </style>
 </head>
+
 <body>
 
 <header>
@@ -212,15 +104,16 @@ footer a:hover {
     <a href="policy.html">Policy</a>
     <a href="video.html">Videos</a>
     <a href="quiz.html">Quizzes</a>
-    <a href="search.html" class="active">Search</a>
+    <a class="active" href="search.html">Search</a>
   </nav>
 </header>
 
 <section class="search-section">
   <h2>Search in Site 🔍</h2>
+
   <form class="search-form" onsubmit="searchFunction(event)">
-    <input type="text" id="searchQuery" placeholder="Enter search term..." list="searchItems">
-    <datalist id="searchItems">
+    <input type="text" id="searchInput" placeholder="Enter search term..." list="suggestions">
+    <datalist id="suggestions">
       <option value="Budgeting 101">
       <option value="Investing for Beginners">
       <option value="Understanding Credit">
@@ -229,7 +122,7 @@ footer a:hover {
     <button type="submit">Search</button>
   </form>
 
-  <div class="search-results" id="searchResults">
+  <div class="search-results">
     <h3>Search Results</h3>
     <ul id="resultsList"></ul>
   </div>
@@ -237,42 +130,58 @@ footer a:hover {
 
 <footer>
   <p>&copy; 2025 Financial Literacy Hub | Designed by Shreya Jain</p>
-  <p>
-    <a href="contact.html">Contact</a> |
-    <a href="tos.html">Terms</a> |
-    <a href="pp.html">Privacy Policy</a>
-  </p>
 </footer>
 
 <script>
-async function searchFunction(event) {
-  event.preventDefault();
-  const query = document.getElementById('searchQuery').value.trim();
-  const resultsList = document.getElementById('resultsList');
-  resultsList.innerHTML = '<li>Searching...</li>';
+/* JSON Search Data (PHP removed) */
+const data = [
+  {
+    title: "Budgeting 101",
+    url: "article.html#budgeting",
+    description: "Learn the basics of budgeting to manage your expenses effectively."
+  },
+  {
+    title: "Investing for Beginners",
+    url: "article.html#investing",
+    description: "A simple guide to start investing in stocks and mutual funds."
+  },
+  {
+    title: "Understanding Credit",
+    url: "article.html#credit",
+    description: "Learn how credit works and how to maintain a good credit score."
+  },
+  {
+    title: "Retirement Planning",
+    url: "article.html#retirement",
+    description: "Plan ahead for a financially secure retirement."
+  }
+];
 
-  if (!query) {
-    resultsList.innerHTML = '<li>Please enter a keyword.</li>';
+function searchFunction(event) {
+  event.preventDefault();
+
+  const q = document.getElementById("searchInput").value.toLowerCase().trim();
+  const list = document.getElementById("resultsList");
+  list.innerHTML = "";
+
+  if (!q) {
+    list.innerHTML = "<li>Please enter a keyword.</li>";
     return;
   }
 
-  try {
-    const response = await fetch('search.html?query=' + encodeURIComponent(query));
-    const results = await response.json();
+  const results = data.filter(item =>
+    item.title.toLowerCase().includes(q) ||
+    item.description.toLowerCase().includes(q)
+  );
 
-    resultsList.innerHTML = '';
-    if (results.length > 0) {
-      results.forEach(result => {
-        const li = document.createElement('li');
-        li.innerHTML = `<a href="${result.url}">${result.title}</a><p>${result.description}</p>`;
-        resultsList.appendChild(li);
-      });
-    } else {
-      resultsList.innerHTML = '<li>No results found.</li>';
-    }
-  } catch (error) {
-    console.error(error);
-    resultsList.innerHTML = '<li>Error retrieving results. Please try again later.</li>';
+  if (results.length === 0) {
+    list.innerHTML = "<li>No results found.</li>";
+  } else {
+    results.forEach(item => {
+      const li = document.createElement("li");
+      li.innerHTML = `<a href="${item.url}">${item.title}</a><p>${item.description}</p>`;
+      list.appendChild(li);
+    });
   }
 }
 </script>
