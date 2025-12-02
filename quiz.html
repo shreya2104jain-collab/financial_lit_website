@@ -1,220 +1,218 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8"/>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Financial Literacy Quiz | Financial Literacy Hub</title>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Financial Literacy Quiz | Financial Literacy Hub</title>
 
-  <style>
-    /* GENERAL STYLES */
-    body {
-      font-family: Arial, sans-serif;
-      margin: 0;
-      background: #f5f7fa;
-      color: #333;
-      display: flex;
-      flex-direction: column;
-      min-height: 100vh;
-    }
+<style>
+  /* GENERAL */
+  body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    background: #f5f7fa;
+    color: #333;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+  }
 
-    /* HEADER */
-    header {
-      background: #2c3e50;
-      color: #fff;
-      padding: 15px 20px;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      flex-wrap: wrap;
-      position: sticky;
-      top: 0;
-      z-index: 1000;
-    }
+  /* HEADER */
+  header {
+    background: #2c3e50;
+    color: #fff;
+    padding: 15px 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+  }
 
-    .logo {
-      font-size: 1.6rem;
-      font-weight: bold;
-      flex: 1 1 100%;
-      text-align: center;
-      margin-bottom: 10px;
-    }
+  .logo {
+    font-size: 1.6rem;
+    font-weight: bold;
+    flex: 1 1 100%;
+    text-align: center;
+    margin-bottom: 10px;
+  }
 
-    nav {
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: center;
-      width: 100%;
-      gap: 12px;
-    }
+  nav {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    width: 100%;
+    gap: 12px;
+  }
 
-    nav a {
-      color: white;
-      text-decoration: none;
-      font-size: 1rem;
-      position: relative;
-    }
+  nav a {
+    color: white;
+    text-decoration: none;
+    font-size: 1rem;
+  }
 
-    nav a:hover {
-      color: #f39c12;
-    }
+  nav a:hover {
+    color: #f39c12;
+  }
 
-    nav input {
-      padding: 7px;
-      border-radius: 5px;
-      border: none;
-      width: 160px;
-    }
+  nav input {
+    padding: 7px;
+    border-radius: 5px;
+    border: none;
+    width: 160px;
+  }
 
-    /* MAIN CONTENT */
-    .main-content {
-      text-align: center;
-      padding: 40px 20px;
-      background: #34495e;
-      color: #fff;
-    }
+  /* MAIN CONTENT */
+  .main-content {
+    text-align: center;
+    padding: 40px 20px;
+    background: #34495e;
+    color: #fff;
+  }
 
-    .main-content h1 {
-      font-size: 2.3rem;
-      margin-bottom: 10px;
-    }
+  .main-content h1 {
+    font-size: 2.3rem;
+    margin-bottom: 10px;
+  }
 
-    .main-content p {
-      font-size: 1.1rem;
-      margin-bottom: 20px;
-    }
+  .main-content p {
+    font-size: 1.1rem;
+    margin-bottom: 20px;
+  }
 
-    /* QUIZ CONTAINER */
-    .quiz-container {
-      margin: 40px auto;
-      padding: 25px;
-      background: #fff;
-      width: 90%;
-      max-width: 700px;
-      border-radius: 12px;
-      box-shadow: 0 3px 8px rgba(0,0,0,0.1);
-    }
+  /* QUIZ CONTAINER */
+  .quiz-container {
+    margin: 40px auto;
+    padding: 25px;
+    background: #fff;
+    width: 90%;
+    max-width: 700px;
+    border-radius: 12px;
+    box-shadow: 0 3px 8px rgba(0,0,0,0.1);
+  }
 
-    .quiz-header {
-      text-align: center;
-    }
+  .quiz-header {
+    text-align: center;
+  }
 
-    .section-list {
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: center;
-      gap: 12px;
-      margin-bottom: 20px;
-    }
+  .section-list {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 12px;
+    margin-bottom: 20px;
+  }
 
-    .section-list button {
-      padding: 10px 15px;
-      background: #2c3e50;
-      border: none;
-      border-radius: 6px;
-      color: white;
-      cursor: pointer;
-      font-size: 1rem;
-    }
+  .section-list button {
+    padding: 10px 15px;
+    background: #2c3e50;
+    border: none;
+    border-radius: 6px;
+    color: white;
+    cursor: pointer;
+    font-size: 1rem;
+  }
 
-    .section-list button.active,
-    .section-list button:hover {
-      background: #f39c12;
-    }
+  .section-list button.active,
+  .section-list button:hover {
+    background: #f39c12;
+  }
 
-    .quiz-content h3 {
-      font-size: 1.2rem;
-      margin-bottom: 10px;
-      color: #2c3e50;
-    }
+  .quiz-content h3 {
+    font-size: 1.2rem;
+    margin-bottom: 10px;
+    color: #2c3e50;
+  }
 
-    .option {
-      display: block;
-      margin: 10px 0;
-      padding: 12px;
-      background: #f9f9f9;
-      border-radius: 6px;
-      border: 1px solid #ccc;
-      cursor: pointer;
-    }
+  .option {
+    display: block;
+    margin: 10px 0;
+    padding: 12px;
+    background: #f9f9f9;
+    border-radius: 6px;
+    border: 1px solid #ccc;
+    cursor: pointer;
+  }
 
-    .quiz-actions {
-      margin-top: 20px;
-      display: flex;
-      gap: 12px;
-      justify-content: space-between;
-      flex-wrap: wrap;
-    }
+  .quiz-actions {
+    margin-top: 20px;
+    display: flex;
+    gap: 12px;
+    justify-content: space-between;
+    flex-wrap: wrap;
+  }
 
-    .btn {
-      padding: 10px 20px;
-      background: #f39c12;
-      border: none;
-      border-radius: 6px;
-      color: white;
-      cursor: pointer;
-      font-weight: bold;
-    }
+  .btn {
+    padding: 10px 20px;
+    background: #f39c12;
+    border: none;
+    border-radius: 6px;
+    color: white;
+    cursor: pointer;
+    font-weight: bold;
+  }
 
-    .btn:hover {
-      background: #e67e22;
-    }
+  .btn:hover {
+    background: #e67e22;
+  }
 
-    .hidden {
-      display: none;
-    }
+  .hidden {
+    display: none;
+  }
 
-    .result-box {
-      text-align: center;
-      padding: 25px;
-      margin: 30px auto;
-      background: #e6eef8;
-      width: 90%;
-      max-width: 600px;
-      border-radius: 10px;
-      box-shadow: 0 3px 8px rgba(0,0,0,0.1);
-    }
+  .result-box {
+    text-align: center;
+    padding: 25px;
+    margin: 30px auto;
+    background: #e6eef8;
+    width: 90%;
+    max-width: 600px;
+    border-radius: 10px;
+    box-shadow: 0 3px 8px rgba(0,0,0,0.1);
+  }
 
-    /* FOOTER */
-    footer {
-      background: #2c3e50;
-      color: white;
-      text-align: center;
-      padding: 20px;
-      margin-top: auto;
-      font-size: 0.9rem;
-    }
+  /* FOOTER */
+  footer {
+    background: #2c3e50;
+    color: white;
+    text-align: center;
+    padding: 20px;
+    margin-top: auto;
+    font-size: 0.9rem;
+  }
 
-    footer a {
-      color: #f39c12;
-      text-decoration: none;
-    }
+  footer a {
+    color: #f39c12;
+    text-decoration: none;
+  }
 
-    footer a:hover {
-      text-decoration: underline;
-    }
+  footer a:hover {
+    text-decoration: underline;
+  }
 
-    /* RESPONSIVE */
-    @media (max-width: 768px) {
-      .main-content h1 { font-size: 1.9rem; }
-      .quiz-container { padding: 20px; }
-    }
+  /* RESPONSIVE */
+  @media (max-width: 768px) {
+    .main-content h1 { font-size: 1.9rem; }
+    .quiz-container { padding: 20px; }
+  }
 
-    @media (max-width: 480px) {
-      .logo { font-size: 1.4rem; }
-      nav { flex-direction: column; gap: 8px; }
-      nav input { width: 100%; margin-top: 5px; }
-      .main-content { padding: 30px 15px; }
-      .main-content h1 { font-size: 1.6rem; }
-      .main-content p { font-size: .95rem; }
-      .quiz-actions { flex-direction: column; }
-      .btn { width: 100%; }
-      .section-list button { width: 100%; text-align: center; }
-    }
-  </style>
+  @media (max-width: 480px) {
+    .logo { font-size: 1.4rem; }
+    nav { flex-direction: column; gap: 8px; }
+    nav input { width: 100%; margin-top: 5px; }
+    .main-content { padding: 30px 15px; }
+    .main-content h1 { font-size: 1.6rem; }
+    .main-content p { font-size: .95rem; }
+    .quiz-actions { flex-direction: column; }
+    .btn { width: 100%; }
+    .section-list button { width: 100%; text-align: center; }
+  }
+</style>
 </head>
 
 <body>
-
 <header>
   <div class="logo">Financial Literacy Hub</div>
   <nav>
