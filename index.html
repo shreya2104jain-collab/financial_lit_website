@@ -1,139 +1,127 @@
-<!-- Replace your current code with this updated version -->
 <!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Financial Literacy Hub</title>
+
   <style>
-    /* General styles */
+    /* GENERAL */
     body {
       font-family: Arial, sans-serif;
       margin: 0;
-      padding: 0;
-      background-color: #f5f7fa;
+      background: #f5f7fa;
       color: #333;
       display: flex;
       flex-direction: column;
       min-height: 100vh;
     }
 
-    /* Header */
+    /* HEADER */
     header {
-      background-color: #2c3e50;
-      color: white;
-      padding: 20px;
+      background: #2c3e50;
+      color: #fff;
+      padding: 15px 20px;
       display: flex;
-      flex-wrap: wrap;
       justify-content: space-between;
       align-items: center;
+      flex-wrap: wrap;
       position: sticky;
       top: 0;
       z-index: 1000;
-      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
     }
 
     .logo {
-      font-size: 1.5em;
+      font-size: 1.6rem;
       font-weight: bold;
+      flex: 1 1 100%;
+      text-align: center;
+      margin-bottom: 10px;
     }
 
     nav {
       display: flex;
       flex-wrap: wrap;
-      gap: 15px;
-      align-items: center;
+      justify-content: center;
+      width: 100%;
+      gap: 12px;
     }
 
     nav a {
       color: white;
       text-decoration: none;
-      font-size: 1em;
-      transition: color 0.3s;
+      font-size: 1rem;
+      position: relative;
     }
 
-    nav a:hover {
-      color: #f39c12;
-    }
-
-    nav input[type="text"] {
-      padding: 5px;
+    nav input {
+      padding: 7px;
       border-radius: 5px;
       border: none;
+      width: 160px;
     }
 
-    /* Main content */
+    /* MAIN SECTION */
     .main-content {
       text-align: center;
-      padding: 50px 20px;
-      background-color: #34495e;
-      color: white;
+      padding: 40px 20px;
+      background: #34495e;
+      color: #fff;
     }
 
     .main-content h1 {
-      font-size: 2.5em;
+      font-size: 2.3rem;
       margin-bottom: 10px;
     }
 
     .main-content p {
-      font-size: 1.2em;
+      font-size: 1.1rem;
       margin-bottom: 20px;
     }
 
-    .main-content a.button {
-      background-color: #f39c12;
-      color: white;
-      padding: 10px 20px;
-      font-size: 1em;
+    .button {
+      background: #f39c12;
+      padding: 10px 22px;
       border-radius: 5px;
       text-decoration: none;
-      transition: background-color 0.3s;
-      display: inline-block;
+      color: #fff;
+      font-weight: bold;
     }
 
-    .main-content a.button:hover {
-      background-color: #e67e22;
-    }
-
-    /* Articles section */
+    /* ARTICLES */
     .articles-section {
-      padding: 40px 20px;
-      max-width: 1200px;
-      margin: 0 auto;
-      flex: 1;
+      padding: 30px 20px;
+      max-width: 1100px;
+      margin: auto;
+      width: 100%;
     }
 
     .articles-section h2 {
       text-align: center;
-      font-size: 2em;
-      margin-bottom: 30px;
+      font-size: 2rem;
+      margin-bottom: 25px;
     }
 
     .articles-container {
       display: flex;
       flex-direction: column;
       gap: 20px;
-      align-items: center;
     }
 
     .article-card {
-      background-color: white;
-      padding: 20px;
-      border-radius: 8px;
-      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
       display: flex;
-      align-items: center;
-      gap: 20px;
-      width: 100%;
-      max-width: 800px;
-      transition: transform 0.3s, box-shadow 0.3s;
+      gap: 15px;
+      background: #fff;
+      padding: 18px;
+      border-radius: 10px;
       text-decoration: none;
-      color: inherit;
+      color: #333;
+      box-shadow: 0 3px 8px rgba(0,0,0,0.1);
+      transition: .3s;
     }
 
     .article-card:hover {
       transform: translateY(-5px);
-      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
     }
 
     .article-card img {
@@ -144,65 +132,57 @@
     }
 
     .article-card-content h3 {
-      font-size: 1.2em;
-      margin-bottom: 5px;
+      margin: 0;
+      font-size: 1.2rem;
       color: #2c3e50;
     }
 
     .article-card-content p {
-      font-size: 0.9em;
+      margin-top: 5px;
+      font-size: .95rem;
       color: #555;
     }
 
-    /* Footer */
-    footer {
-      background-color: #2c3e50;
-      color: white;
-      text-align: center;
-      padding: 20px;
-      font-size: 0.9em;
-      margin-top: auto;
-    }
+    /* RESPONSIVE BREAKPOINTS */
 
-    footer a {
-      color: #f39c12;
-      text-decoration: none;
-    }
-
-    footer a:hover {
-      text-decoration: underline;
-    }
-
-    /* Responsive Styles */
+    /* Tablets */
     @media (max-width: 768px) {
+
+      .main-content h1 {
+        font-size: 1.8rem;
+      }
+
       .article-card {
         flex-direction: column;
+        align-items: center;
         text-align: center;
       }
 
       .article-card img {
-        width: 60px;
-        height: 60px;
-      }
-
-      nav {
-        justify-content: center;
-      }
-
-      .main-content h1 {
-        font-size: 2em;
-      }
-
-      .main-content p {
-        font-size: 1em;
+        width: 70px;
+        height: 70px;
       }
     }
 
+    /* Phones */
     @media (max-width: 480px) {
+
+      .logo {
+        font-size: 1.4rem;
+      }
+
       nav {
         flex-direction: column;
-        align-items: flex-start;
-        gap: 10px;
+        gap: 8px;
+      }
+
+      nav a {
+        font-size: 0.95rem;
+      }
+
+      nav input {
+        width: 100%;
+        margin-top: 5px;
       }
 
       .main-content {
@@ -210,68 +190,81 @@
       }
 
       .main-content h1 {
-        font-size: 1.5em;
+        font-size: 1.6rem;
       }
 
       .main-content p {
-        font-size: 0.9em;
+        font-size: .95rem;
+      }
+
+      .article-card {
+        padding: 15px;
       }
     }
   </style>
 </head>
+
 <body>
-  <header>
-    <div class="logo">Financial Literacy Hub</div>
-    <nav>
-      <a href="index.html">Home</a>
-      <a href="article.html">Articles</a>
-      <a href="policy.html">Policy</a>
-      <a href="video.html">Videos</a>
-      <a href="quiz.html">Quizzes</a>
-      <a href="search.html"><input type="text" placeholder="Search in site..."></a>
-    </nav>
-  </header>
 
-  <div class="main-content">
-    <h1>Welcome to Financial Literacy Learning</h1>
-    <p>Start your journey towards financial knowledge</p>
-    <a class="button" href="get_started.html">Get Started</a>
+<header>
+  <div class="logo">Financial Literacy Hub</div>
+  
+  <nav>
+    <a href="index.html">Home</a>
+    <a href="article.html">Articles</a>
+    <a href="policy.html">Policy</a>
+    <a href="video.html">Videos</a>
+    <a href="quiz.html">Quizzes</a>
+    <input type="text" placeholder="Search in site...">
+  </nav>
+</header>
+
+<div class="main-content">
+  <h1>Welcome to Financial Literacy Learning</h1>
+  <p>Start your journey towards financial knowledge</p>
+  <a class="button" href="get_started.html">Get Started</a>
+</div>
+
+<div class="articles-section">
+  <h2>Educational Articles</h2>
+
+  <div class="articles-container">
+
+    <a class="article-card" href="article_budgeting.html">
+      <img src="Understanding Budgeting.jpg" alt="Budgeting">
+      <div class="article-card-content">
+        <h3>Understanding Budgeting</h3>
+        <p>Learn how to create and stick to a budget.</p>
+      </div>
+    </a>
+
+    <a class="article-card" href="article_investing.html">
+      <img src="investing1.jpg" alt="Investing">
+      <div class="article-card-content">
+        <h3>Investment Basics</h3>
+        <p>Discover the fundamentals of smart investing.</p>
+      </div>
+    </a>
+
+    <a class="article-card" href="article_debt.html">
+      <img src="Debt Management.jpg" alt="Debt">
+      <div class="article-card-content">
+        <h3>Debt Management</h3>
+        <p>Manage debt effectively and avoid financial stress.</p>
+      </div>
+    </a>
+
   </div>
+</div>
 
-  <div class="articles-section">
-    <h2>Educational Articles</h2>
-    <div class="articles-container">
-      <a class="article-card" href="article_budgeting.html">
-        <img src="Understanding Budgeting.jpg" alt="Budgeting" />
-        <div class="article-card-content">
-          <h3>Understanding Budgeting</h3>
-          <p>Learn how to create and stick to a budget to achieve financial stability.</p>
-        </div>
-      </a>
-      <a class="article-card" href="article_investing.html">
-        <img src="investing1.jpg" alt="Investment" />
-        <div class="article-card-content">
-          <h3>Investment Basics</h3>
-          <p>Discover the fundamental principles of smart investing.</p>
-        </div>
-      </a>
-      <a class="article-card" href="article_debt.html">
-        <img src="Debt Management.jpg" alt="Debt" />
-        <div class="article-card-content">
-          <h3>Debt Management</h3>
-          <p>Understand how to manage debt effectively and avoid financial stress.</p>
-        </div>
-      </a>
-    </div>
-  </div>
+<footer>
+  <p>&copy; 2024 Financial Literacy Hub. All rights reserved.</p>
+  <p>
+    <a href="contact.html">Contact Us</a> |
+    <a href="tos.html">Terms</a> |
+    <a href="pp.html">Privacy Policy</a>
+  </p>
+</footer>
 
-  <footer>
-    <p>&copy; 2024 Financial Literacy Hub. All rights reserved.</p>
-    <p>
-      <a href="contact.html">Contact Us</a> |
-      <a href="tos.html">Terms of Service</a> |
-      <a href="pp.html">Privacy Policy</a>
-    </p>
-  </footer>
 </body>
 </html>
