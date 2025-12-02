@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Policies</title>
+
     <style>
         body {
             font-family: Arial, sans-serif;
@@ -13,14 +14,16 @@
             color: #333;
         }
 
+        /* ---------- HEADER ---------- */
         header {
             background-color: #34495e;
             color: #fff;
-            padding: 20px;
+            padding: 15px 20px;
             display: flex;
+            flex-wrap: wrap;
             justify-content: space-between;
             align-items: center;
-            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
             position: sticky;
             top: 0;
             z-index: 1000;
@@ -29,94 +32,129 @@
         header .logo {
             font-size: 1.5em;
             font-weight: bold;
+            flex: 1;
         }
 
         nav {
             display: flex;
-            gap: 20px;
+            flex-wrap: wrap;
+            gap: 15px;
+            align-items: center;
         }
 
         nav a {
-            color: #fff;
+            color: white;
             text-decoration: none;
-            font-size: 1.1em;
+            font-size: 1em;
         }
 
         nav a:hover {
             color: #f39c12;
         }
 
+        nav input[type="text"] {
+            padding: 6px 10px;
+            border-radius: 5px;
+            border: none;
+            outline: none;
+        }
+
+        /* ---------- CONTAINER ---------- */
         .container {
             max-width: 1200px;
-            margin: 30px auto;
+            margin: 25px auto;
             padding: 20px;
-            background-color: #fff;
+            background-color: white;
             border-radius: 8px;
             box-shadow: 0 3px 8px rgba(0, 0, 0, 0.1);
         }
 
+        /* ---------- GRID ---------- */
         .grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 20px;
+            grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+            gap: 18px;
         }
 
         .card {
-            background: #ffffff;
+            background-color: white;
             border: 1px solid #ddd;
             border-radius: 8px;
-            padding: 20px;
+            padding: 25px 10px;
             text-align: center;
-            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            font-size: 1.2em;
+            color: #2c3e50;
             cursor: pointer;
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            transition: 0.3s ease;
+            box-shadow: 0 2px 6px rgba(0,0,0,0.1);
         }
 
         .card:hover {
             transform: translateY(-5px);
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.15);
         }
 
-        .card h2 {
-            font-size: 1.2em;
-            margin-bottom: 15px;
-            color: #2c3e50;
-        }
-
+        /* ---------- FOOTER ---------- */
         footer {
             background-color: #34495e;
-            color: #fff;
+            color: white;
+            padding: 20px;
             text-align: center;
-            padding: 15px;
             margin-top: 50px;
         }
 
         footer a {
             color: #f39c12;
             text-decoration: none;
-            margin: 0 15px;
         }
 
         footer a:hover {
             text-decoration: underline;
         }
 
+        /* ---------- MOBILE RESPONSIVE ---------- */
         @media (max-width: 768px) {
-            .card {
-                padding: 15px;
+            header {
+                flex-direction: column;
+                text-align: center;
+                gap: 10px;
             }
 
-            header .logo {
-                font-size: 1.2em;
+            nav {
+                justify-content: center;
+                gap: 10px;
             }
 
             nav a {
                 font-size: 0.9em;
-                margin: 0 10px;
             }
 
-            footer p {
-                font-size: 0.8em;
+            nav input[type="text"] {
+                width: 160px;
+            }
+
+            .card {
+                padding: 20px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            nav {
+                flex-direction: column;
+                gap: 8px;
+            }
+
+            nav input[type="text"] {
+                width: 100%;
+            }
+
+            header .logo {
+                font-size: 1.3em;
+            }
+
+            .card {
+                padding: 18px;
+                font-size: 1.1em;
             }
         }
     </style>
@@ -125,44 +163,33 @@
 
     <header>
         <div class="logo">Financial Literacy Hub</div>
+
         <nav>
             <a href="index.html">Home</a>
             <a href="article.html">Articles</a>
             <a href="policy.html">Policy</a>
             <a href="video.html">Videos</a>
             <a href="quiz.html">Quizzes</a>
-            <a href="search.html"><input type="text" placeholder="Search in site..."></a>
 
+            <!-- FIXED INPUT TAG (self-closing) -->
+            <a href="search.html">
+                <input type="text" placeholder="Search in site..." />
+            </a>
         </nav>
     </header>
 
     <div class="container">
-        <h1 style="text-align: center; margin-bottom: 30px;">Policies</h1>
+        <h1 style="text-align: center; margin-bottom: 25px;">Policies</h1>
+
         <div class="grid">
-            <div class="card" onclick="window.location.href='gov_policy.html'">
-                <h2>GOV</h2>
-            </div>
-            <div class="card" onclick="window.location.href='rbi_policy.html'">
-                <h2>RBI</h2>
-            </div>
-            <div class="card" onclick="window.location.href='sbi_policy.html'">
-                <h2>SBI</h2>
-            </div>
-            <div class="card" onclick="window.location.href='hdfc_policy.html'">
-                <h2>HDFC</h2>
-            </div>
-            <div class="card" onclick="window.location.href='central_policy.html'">
-                <h2>Central Bank</h2>
-            </div>
-            <div class="card" onclick="window.location.href='pnb_policy.html'">
-                <h2>PNB</h2>
-            </div>
-            <div class="card" onclick="window.location.href='bob_policy.html'">
-                <h2>BOB</h2>
-            </div>
-            <div class="card" onclick="window.location.href='yesbank_policy.html'">
-                <h2>Yes Bank</h2>
-            </div>
+            <div class="card" onclick="window.location.href='gov_policy.html'">GOV</div>
+            <div class="card" onclick="window.location.href='rbi_policy.html'">RBI</div>
+            <div class="card" onclick="window.location.href='sbi_policy.html'">SBI</div>
+            <div class="card" onclick="window.location.href='hdfc_policy.html'">HDFC</div>
+            <div class="card" onclick="window.location.href='central_policy.html'">Central Bank</div>
+            <div class="card" onclick="window.location.href='pnb_policy.html'">PNB</div>
+            <div class="card" onclick="window.location.href='bob_policy.html'">BOB</div>
+            <div class="card" onclick="window.location.href='yesbank_policy.html'">Yes Bank</div>
         </div>
     </div>
 
