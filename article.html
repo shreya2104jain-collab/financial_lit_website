@@ -7,7 +7,7 @@
     <style>
         /* General styles */
         body {
-            font-family: Arial, sans-serif;
+            font-family: 'Poppins', sans-serif;
             margin: 0;
             padding: 0;
             background-color: #f5f7fa;
@@ -21,87 +21,106 @@
         header {
             background-color: #2c3e50;
             color: white;
-            padding: 20px;
+            padding: 15px 20px;
             display: flex;
             justify-content: space-between;
             align-items: center;
+            flex-wrap: wrap;
             position: sticky;
             top: 0;
             z-index: 1000;
-            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
         }
 
         header .logo {
-            font-size: 1.5em;
+            font-size: 1.4em;
             font-weight: bold;
         }
 
         nav {
             display: flex;
+            flex-wrap: wrap;
             gap: 15px;
+            align-items: center;
         }
 
         nav a {
             color: white;
             text-decoration: none;
             font-size: 1em;
-            transition: color 0.3s;
         }
 
         nav a:hover {
             color: #f39c12;
         }
 
-        /* Main content styles */
+        nav input {
+            padding: 6px 12px;
+            border-radius: 5px;
+            border: none;
+            font-size: 0.9rem;
+        }
+
+        /* Mobile Header */
+        @media (max-width: 600px) {
+            header {
+                text-align: center;
+            }
+            nav {
+                justify-content: center;
+                width: 100%;
+                margin-top: 10px;
+            }
+            nav input {
+                width: 100%;
+            }
+        }
+
+        /* Main content */
         .main-content {
-            padding: 50px 20px;
+            padding: 40px 20px;
             text-align: center;
         }
 
         .main-content h1 {
-            font-size: 2.5em;
-            margin-bottom: 20px;
+            font-size: 2.2em;
         }
 
         .main-content p {
-            font-size: 1.2em;
-            margin-bottom: 40px;
+            font-size: 1.1em;
             color: #555;
         }
 
-        /* Articles section */
+        /* Articles Section */
         .articles-section {
-            padding: 40px 20px;
-            max-width: 1200px;
+            padding: 20px;
+            max-width: 1100px;
             margin: 0 auto;
             flex: 1;
         }
 
         .articles-section h2 {
             text-align: center;
-            font-size: 2em;
+            font-size: 1.9em;
             margin-bottom: 30px;
         }
 
         .article {
-            display: flex;
-            flex-direction: column;
             background-color: white;
             border-radius: 8px;
             box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-            margin-bottom: 20px;
+            margin-bottom: 25px;
             overflow: hidden;
-            transition: transform 0.3s, box-shadow 0.3s;
+            transition: 0.3s;
         }
 
         .article:hover {
             transform: translateY(-5px);
-            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
         }
 
         .article img {
             width: 100%;
-            height: 300px;
+            height: 280px;
             object-fit: cover;
         }
 
@@ -110,7 +129,7 @@
         }
 
         .article-content h3 {
-            font-size: 1.5em;
+            font-size: 1.4em;
             margin-bottom: 10px;
             color: #2c3e50;
         }
@@ -122,14 +141,50 @@
         }
 
         .article-content a {
-            text-decoration: none;
             color: #f39c12;
+            text-decoration: none;
             font-weight: bold;
-            transition: color 0.3s;
         }
 
         .article-content a:hover {
             color: #e67e22;
+        }
+
+        /* Responsive Article Cards */
+        @media (max-width: 768px) {
+            .main-content h1 {
+                font-size: 1.8em;
+            }
+            .main-content p {
+                font-size: 1em;
+            }
+            .article img {
+                height: 200px;
+            }
+            .article-content h3 {
+                font-size: 1.2em;
+            }
+            .article-content p {
+                font-size: 0.95em;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .articles-section {
+                padding: 10px;
+            }
+            .article img {
+                height: 180px;
+            }
+            .article-content {
+                padding: 15px;
+            }
+            .article-content h3 {
+                font-size: 1.1em;
+            }
+            .article-content p {
+                font-size: 0.9em;
+            }
         }
 
         /* Footer styles */
@@ -137,8 +192,13 @@
             background-color: #2c3e50;
             color: white;
             text-align: center;
-            padding: 20px;
+            padding: 18px;
             margin-top: auto;
+        }
+
+        footer p, footer a {
+            color: #fff;
+            font-size: 0.9em;
         }
 
         footer a {
@@ -150,15 +210,17 @@
             text-decoration: underline;
         }
 
-        /* Responsive styles */
-        @media (max-width: 768px) {
-            .article img {
-                height: 200px;
+        @media (max-width: 480px) {
+            footer p, footer a {
+                font-size: 0.8em;
             }
         }
+
     </style>
 </head>
+
 <body>
+
     <header>
         <div class="logo">Financial Literacy Hub</div>
         <nav>
@@ -167,7 +229,7 @@
             <a href="policy.html">Policy</a>
             <a href="video.html">Videos</a>
             <a href="quiz.html">Quizzes</a>
-            <a href="search.html"><input type="text" placeholder="Search in site..."></a>
+            <input type="text" placeholder="Search in site...">
         </nav>
     </header>
 
@@ -178,6 +240,7 @@
 
     <div class="articles-section">
         <h2>Featured Articles</h2>
+
         <div class="article">
             <img src="financial_planning.jpg" alt="Financial Planning">
             <div class="article-content">
@@ -200,10 +263,11 @@
             <img src="retirement.jpg" alt="Retirement Planning">
             <div class="article-content">
                 <h3>Planning for Retirement</h3>
-                <p>Start preparing for a secure and comfortable retirement with these expert insights.</p>
+            <p>Start preparing for a secure and comfortable retirement with these expert insights.</p>
                 <a href="#">Read More</a>
             </div>
         </div>
+
     </div>
 
     <footer>
@@ -214,5 +278,6 @@
             <a href="pp.html">Privacy Policy</a>
         </p>
     </footer>
+
 </body>
 </html>
