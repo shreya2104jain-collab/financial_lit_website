@@ -1,206 +1,231 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Yes Bank Policy</title>
-<style>
-    body {
-        font-family: Arial, sans-serif;
-        margin: 0;
-        padding: 0;
-        background-color: #f5f7fa;
-        color: #333;
-    }
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Yes Bank Policy</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f5f7fa;
+            color: #333;
+        }
 
-    header {
-        background-color: #34495e;
-        color: #fff;
-        padding: 15px 20px;
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        flex-wrap: wrap;
-        gap: 10px;
-        box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-        position: sticky;
-        top: 0;
-        z-index: 1000;
-    }
-
-    .logo {
-        font-size: 1.6em;
-        font-weight: bold;
-        flex-shrink: 0;
-    }
-
-    nav {
-        display: flex;
-        gap: 15px;
-        flex-wrap: wrap;
-        justify-content: center;
-        min-width: 280px;
-    }
-
-    nav a {
-        color: #fff;
-        text-decoration: none;
-        font-size: 1.05em;
-        white-space: nowrap;
-    }
-
-    nav a:hover {
-        color: #f39c12;
-    }
-
-    .search-container {
-        display: flex;
-        align-items: center;
-        flex-shrink: 0;
-    }
-
-    .search-container input {
-        padding: 5px 10px;
-        border-radius: 5px;
-        border: none;
-        font-size: 0.9em;
-        width: 140px;
-        max-width: 100%;
-        cursor: pointer;
-    }
-
-    .container {
-        max-width: 1200px;
-        margin: 30px auto;
-        padding: 20px;
-        background-color: #fff;
-        border-radius: 8px;
-        box-shadow: 0 3px 8px rgba(0,0,0,0.1);
-        word-wrap: break-word;
-    }
-
-    .policy-content {
-        font-size: 1.1em;
-        color: #555;
-    }
-
-    .policy-details {
-        margin-top: 20px;
-    }
-
-    .policy-details h2 {
-        color: #2c3e50;
-        font-size: 1.5em;
-        margin-top: 20px;
-    }
-
-    .policy-details p {
-        margin: 10px 0;
-        line-height: 1.6;
-    }
-
-    .policy-details ul {
-        margin-left: 20px;
-    }
-
-    footer {
-        background-color: #34495e;
-        color: #fff;
-        text-align: center;
-        padding: 15px 10px;
-        margin-top: 50px;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-    }
-
-    footer a {
-        color: #f39c12;
-        text-decoration: none;
-        margin: 5px 10px;
-        font-size: 1em;
-    }
-
-    footer a:hover { text-decoration: underline; }
-
-    footer p { margin: 5px 0; font-size: 0.9em; }
-
-    /* Fully responsive */
-    @media (max-width: 1100px) {
         header {
-            justify-content: center;
-            text-align: center;
+            background-color: #34495e;
+            color: #fff;
+            padding: 15px 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
         }
+
+        header .logo {
+            font-size: 1.2em; /* smaller logo */
+            font-weight: bold;
+        }
+
         nav {
-            width: 100%;
-            justify-content: center;
+            display: flex;
+            gap: 15px; /* reduced gap */
         }
+
+        nav a {
+            color: #fff;
+            text-decoration: none;
+            font-size: 0.95em; /* smaller nav links */
+        }
+
+        nav a:hover {
+            color: #f39c12;
+        }
+
         .search-container {
-            width: 100%;
-            justify-content: center;
-            margin-top: 5px;
+            display: flex;
+            align-items: center;
         }
-    }
 
-    @media (max-width: 768px) {
-        .logo { font-size: 1.3em; }
-        nav a { font-size: 0.9em; }
-        .search-container input { width: 120px; font-size: 0.8em; }
-        .container { padding: 15px; }
-        .policy-details h2 { font-size: 1.3em; }
-        .policy-details p, .policy-content p { font-size: 1em; }
-    }
+        .search-container input {
+            padding: 4px 8px; /* smaller input */
+            font-size: 0.85em;
+            border: none;
+            border-radius: 5px;
+        }
 
-    @media (max-width: 480px) {
-        header { flex-direction: column; gap: 10px; }
-        nav { flex-direction: column; gap: 8px; }
-        .search-container input { width: 100%; max-width: 180px; }
-    }
-</style>
+        .container {
+            max-width: 1200px;
+            margin: 30px auto;
+            padding: 20px;
+            background-color: #fff;
+            border-radius: 8px;
+            box-shadow: 0 3px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        .policy-content {
+            text-align: left;
+            font-size: 1.1em;
+            color: #555;
+        }
+
+        .policy-details {
+            margin-top: 20px;
+        }
+
+        .policy-details h2 {
+            color: #2c3e50;
+            font-size: 1.4em;
+        }
+
+        .policy-details p {
+            margin: 10px 0;
+            line-height: 1.6;
+        }
+
+        .policy-details ul {
+            margin-left: 20px;
+        }
+
+        footer {
+            background-color: #34495e;
+            color: #fff;
+            text-align: center;
+            padding: 20px 0;
+            margin-top: 50px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+        }
+
+        footer a {
+            color: #f39c12;
+            text-decoration: none;
+            margin: 5px;
+            font-size: 0.95em;
+        }
+
+        footer a:hover {
+            text-decoration: underline;
+        }
+
+        footer p {
+            margin: 5px 0;
+            font-size: 0.9em;
+        }
+
+        .footer-links {
+            margin-top: 10px;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+
+        .footer-links a {
+            margin: 5px 10px;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            header {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+
+            header .logo {
+                font-size: 1.1em;
+                margin-bottom: 10px;
+            }
+
+            nav {
+                flex-wrap: wrap;
+                gap: 10px;
+                margin-bottom: 10px;
+            }
+
+            nav a {
+                font-size: 0.85em;
+            }
+
+            .search-container input {
+                font-size: 0.8em;
+                width: 120px;
+            }
+
+            .policy-details h2 {
+                font-size: 1.25em;
+            }
+
+            .policy-details p {
+                font-size: 1em;
+            }
+
+            footer p {
+                font-size: 0.85em;
+            }
+
+            .footer-links {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .footer-links a {
+                margin: 5px 0;
+            }
+        }
+    </style>
 </head>
 <body>
 
-<header>
-    <div class="logo">Financial Literacy Hub</div>
-    <nav>
-        <a href="index.html">Home</a>
-        <a href="article.html">Articles</a>
-        <a href="policy.html">Policy</a>
-        <a href="video.html">Videos</a>
-        <a href="quiz.html">Quizzes</a>
-    </nav>
-    <div class="search-container">
-        <input type="text" placeholder="Search in site..." onclick="window.location='search.html'">
-    </div>
-</header>
+    <header>
+        <div class="logo">Financial Literacy Hub</div>
+        <nav>
+            <a href="index.html">Home</a>
+            <a href="article.html">Articles</a>
+            <a href="policy.html">Policy</a>
+            <a href="video.html">Videos</a>
+            <a href="quiz.html">Quizzes</a>
+        </nav>
+        <div class="search-container">
+            <a href="search.html">
+                <input type="text" placeholder="Search in site...">
+            </a>
+        </div>
+    </header>
 
-<div class="container">
-    <h1>Yes Bank Policies</h1>
-    <div class="policy-content">
-        <p>Yes Bank provides a wide range of banking services for individuals and corporate clients. Their policies focus on accessible banking, financial inclusion, and customer convenience, covering digital banking, personal loans, retail banking, and corporate banking.</p>
+    <div class="container">
+        <h1>Yes Bank Policies</h1>
+        <div class="policy-content">
+            <p>Yes Bank offers a wide range of banking services that cater to both individual and corporate clients. Their policies focus on making banking more accessible and improving financial inclusion. The bank offers digital banking, personal loans, retail banking, and corporate banking solutions.</p>
+        </div>
+
+        <div class="policy-details">
+            <h2>Key Yes Bank Policies</h2>
+            <p>Yes Bank has developed several policies that guide their operations and customer relations:</p>
+            <ul>
+                <li><strong>Digital Banking Policy:</strong> Yes Bank emphasizes providing a seamless and secure digital banking experience. It has launched mobile banking apps, online banking, and digital payment solutions for enhanced customer convenience.</li>
+                <li><strong>Personal Loan Policy:</strong> The bank offers personal loans at competitive interest rates with flexible repayment options, catering to various personal financial needs.</li>
+                <li><strong>Retail Banking Policy:</strong> Yes Bank delivers a wide range of retail banking services, including savings and checking accounts, credit cards, mortgages, and fixed deposits.</li>
+                <li><strong>Corporate Banking Policy:</strong> Yes Bank provides services for businesses, including working capital finance, business loans, trade services, and cash management solutions.</li>
+                <li><strong>Financial Inclusion Policy:</strong> The bank has initiatives to provide financial services to underserved and rural populations, including savings accounts, microfinance options, and small business loans.</li>
+            </ul>
+        </div>
     </div>
 
-    <div class="policy-details">
-        <h2>Key Yes Bank Policies</h2>
-        <ul>
-            <li><strong>Digital Banking Policy:</strong> Mobile and online banking apps, digital payments, and secure banking experience.</li>
-            <li><strong>Personal Loan Policy:</strong> Competitive interest rates and flexible repayment options.</li>
-            <li><strong>Retail Banking Policy:</strong> Savings/checking accounts, credit cards, mortgages, and fixed deposits.</li>
-            <li><strong>Corporate Banking Policy:</strong> Business loans, working capital, trade services, and cash management.</li>
-            <li><strong>Financial Inclusion Policy:</strong> Services for underserved and rural populations, microfinance, and small business loans.</li>
-        </ul>
-    </div>
-</div>
-
-<footer>
-    <p>&copy; 2024 Financial Literacy Hub. All rights reserved.</p>
-    <p>
-        <a href="contact.html">Contact Us</a> |
-        <a href="tos.html">Terms of Service</a> |
-        <a href="pp.html">Privacy Policy</a>
-    </p>
-    <p>For more information on Yes Bank policies, visit their official <a href="https://www.yesbank.in/" target="_blank">website</a>.</p>
-</footer>
+    <footer>
+        <p>&copy; 2024 Financial Literacy Hub. All rights reserved.</p>
+        <div class="footer-links">
+            <a href="contact.html">Contact Us</a> |
+            <a href="tos.html">Terms of Service</a> |
+            <a href="pp.html">Privacy Policy</a>
+        </div>
+        <p>For more information on Yes Bank policies, visit their official <a href="https://www.yesbank.in/" target="_blank">website</a>.</p>
+    </footer>
 
 </body>
 </html>
