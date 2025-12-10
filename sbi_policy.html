@@ -6,7 +6,6 @@
     <title>SBI Policy</title>
 
     <style>
-
         body {
             font-family: Arial, sans-serif;
             margin: 0;
@@ -15,142 +14,119 @@
             color: #333;
         }
 
-        /* HEADER FIXED RESPONSIVE */
+        /* ================= HEADER ================= */
         header {
             background-color: #34495e;
             color: #fff;
             padding: 15px 20px;
             display: flex;
-            flex-wrap: wrap;              /* 🔥 MAIN FIX */
-            justify-content: space-between;
+            flex-wrap: wrap; /* FIX for 100–200% zoom */
             align-items: center;
-            gap: 10px;                    /* spacing for wrap */
-            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+            justify-content: space-between;
+            gap: 15px;
             position: sticky;
             top: 0;
             z-index: 1000;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
         }
 
         .logo {
-            font-size: 1.5em;
+            font-size: 1.5rem;
             font-weight: bold;
-            flex-shrink: 0;
+            flex: 1;
+            min-width: 180px;
         }
 
         nav {
             display: flex;
-            flex-wrap: wrap;              /* 🔥 Wrap links when zoomed */
             gap: 15px;
+            flex-wrap: wrap; /* NEW: allows 2-row nav without breaking */
             justify-content: center;
+            flex: 2;
+            min-width: 240px;
         }
 
         nav a {
-            color: #fff;
+            color: white;
             text-decoration: none;
-            font-size: 1.05em;
+            font-size: 1rem;
         }
 
         nav a:hover {
             color: #f39c12;
         }
 
-        /* SEARCH BOX FIX */
         .search-container {
+            flex: 1;
             display: flex;
-            align-items: center;
+            justify-content: flex-end;
+            min-width: 170px;
         }
 
         .search-container input {
-            padding: 7px 12px;
-            font-size: 1em;
-            border: none;
+            padding: 7px 10px;
+            font-size: 0.9rem;
             border-radius: 5px;
+            border: none;
+            width: 100%;
+            max-width: 180px;
         }
 
-
-        /* PAGE CONTENT */
+        /* ============ MAIN CONTENT ============ */
         .container {
             max-width: 1200px;
             margin: 30px auto;
             padding: 20px;
-            background: #fff;
+            background: white;
             border-radius: 8px;
             box-shadow: 0 3px 8px rgba(0,0,0,0.1);
         }
 
-        .policy-content {
-            font-size: 1.1em;
-            color: #555;
+        .policy-details ul {
+            margin-left: 20px;
         }
 
-        .policy-details h2 {
-            color: #2c3e50;
-            font-size: 1.5em;
-        }
-
-        .policy-details p,
-        .policy-details li {
-            font-size: 1.05em;
-            line-height: 1.6;
-        }
-
-
-        /* FOOTER */
+        /* ================== FOOTER ================== */
         footer {
             background-color: #34495e;
             color: white;
             text-align: center;
-            padding: 25px 10px;
+            padding: 20px 0;
+            margin-top: 40px;
+        }
+
+        footer .footer-links {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 10px;
         }
 
         footer a {
             color: #f39c12;
-            margin: 0 7px;
             text-decoration: none;
         }
 
+        footer a:hover {
+            text-decoration: underline;
+        }
 
-        /* 📌 RESPONSIVE BREAKPOINTS */
-        @media (max-width: 900px) {
-
+        /* ================== MOBILE FIX ================== */
+        @media (max-width: 768px) {
             header {
-                justify-content: center;
+                flex-direction: column;
                 text-align: center;
-            }
-
-            nav {
-                width: 100%;
-                justify-content: center;
             }
 
             .search-container {
-                width: 100%;               /* search box full width */
                 justify-content: center;
+                width: 100%;
             }
 
             .search-container input {
-                width: 90%;
-                margin-top: 10px;
+                max-width: 100%;
             }
         }
-
-        @media (max-width: 600px) {
-
-            .logo {
-                font-size: 1.3em;
-                width: 100%;
-                text-align: center;
-            }
-
-            nav a {
-                font-size: 0.95em;
-            }
-
-            .container {
-                padding: 15px;
-            }
-        }
-
     </style>
 </head>
 
@@ -164,43 +140,42 @@
         <a href="article.html">Articles</a>
         <a href="policy.html">Policy</a>
         <a href="video.html">Videos</a>
-        <a href="quiz.html">Quizzes</a>
+        <a href="quiz.html">Quizzes</a> <!-- VERY IMPORTANT: stays in header -->
     </nav>
 
     <div class="search-container">
         <a href="search.html">
-            <input type="text" placeholder="Search in site...">
+            <input type="text" placeholder="Search in site…">
         </a>
     </div>
 </header>
 
 <div class="container">
     <h1>SBI Policies</h1>
-
-    <div class="policy-content">
-        <p>The State Bank of India...</p>
-    </div>
+    <p>The State Bank of India provides various financial policies…</p>
 
     <div class="policy-details">
         <h2>Key SBI Policies</h2>
-
         <ul>
-            <li><strong>Personal Loans:</strong> Flexible schemes...</li>
-            <li><strong>Home Loans:</strong> Affordable rates...</li>
-            <li><strong>Educational Loans:</strong> Assistance for students...</li>
-            <li><strong>Digital Banking:</strong> Mobile & internet banking...</li>
-            <li><strong>SME Support:</strong> Policies for small businesses...</li>
+            <li><strong>Personal Loans:</strong> Affordable loans.</li>
+            <li><strong>Home Loans:</strong> Easy repayment.</li>
+            <li><strong>Education Loans:</strong> Support students.</li>
+            <li><strong>Digital Banking:</strong> UPI, internet banking.</li>
+            <li><strong>Financial Inclusion:</strong> For rural citizens.</li>
         </ul>
     </div>
 </div>
 
 <footer>
     <p>&copy; 2024 Financial Literacy Hub</p>
-    <p>
-        <a href="contact.html">Contact</a> |
-        <a href="tos.html">Terms</a> |
-        <a href="pp.html">Privacy</a>
-    </p>
+
+    <div class="footer-links">
+        <a href="contact.html">Contact</a>
+        <a href="tos.html">Terms</a>
+        <a href="pp.html">Privacy Policy</a>
+    </div>
+
+    <p>Visit the official <a href="https://www.sbi.co.in" target="_blank">SBI Website</a></p>
 </footer>
 
 </body>
