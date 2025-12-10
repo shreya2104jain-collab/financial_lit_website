@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Central Bank Policy</title>
+
     <style>
         body {
             font-family: Arial, sans-serif;
@@ -13,33 +14,36 @@
             color: #333;
         }
 
+        /* ================= HEADER ================= */
         header {
             background-color: #34495e;
             color: #fff;
-            padding: 20px;
+            padding: 15px 20px;
             display: flex;
             justify-content: space-between;
             align-items: center;
-            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            flex-wrap: wrap; /* KEEP NAV + SEARCH TOGETHER ON SMALL SCREEN */
+            gap: 10px;
             position: sticky;
             top: 0;
             z-index: 1000;
         }
 
-        header .logo {
-            font-size: 1.5em;
+        .logo {
+            font-size: 1.6em;
             font-weight: bold;
         }
 
         nav {
             display: flex;
-            gap: 20px;
+            gap: 15px;
+            flex-wrap: wrap;
         }
 
         nav a {
             color: #fff;
             text-decoration: none;
-            font-size: 1.1em;
+            font-size: 1.05em;
         }
 
         nav a:hover {
@@ -52,169 +56,131 @@
         }
 
         .search-container input {
-            padding: 5px 10px;
-            font-size: 0.9em;
-            border: none;
+            padding: 7px 12px;
             border-radius: 5px;
+            border: none;
+            font-size: 0.9em;
+            outline: none;
         }
 
+        /* ================= MAIN ================= */
         .container {
-            max-width: 1200px;
+            max-width: 1100px;
             margin: 30px auto;
+            background: #fff;
             padding: 20px;
-            background-color: #fff;
             border-radius: 8px;
-            box-shadow: 0 3px 8px rgba(0, 0, 0, 0.1);
-        }
-
-        .policy-content {
-            text-align: left;
-            font-size: 1.1em;
-            color: #555;
-        }
-
-        .policy-details {
-            margin-top: 20px;
+            box-shadow: 0 3px 8px rgba(0,0,0,0.1);
         }
 
         .policy-details h2 {
             color: #2c3e50;
-            font-size: 1.5em;
-        }
-
-        .policy-details p {
-            margin: 10px 0;
-            line-height: 1.6;
         }
 
         .policy-details ul {
             margin-left: 20px;
         }
 
+        /* ================= FOOTER ================= */
         footer {
             background-color: #34495e;
             color: #fff;
             text-align: center;
-            padding: 15px 0;
-            margin-top: 50px;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-        }
-
-        footer a {
-            color: #f39c12;
-            text-decoration: none;
-            margin: 5px;
-            font-size: 1em;
-        }
-
-        footer a:hover {
-            text-decoration: underline;
-        }
-
-        footer p {
-            margin: 5px 0;
-            font-size: 0.9em;
+            padding: 20px;
         }
 
         .footer-links {
             margin-top: 10px;
             display: flex;
-            flex-wrap: wrap;
             justify-content: center;
+            gap: 15px;
+            flex-wrap: wrap;
         }
 
-        .footer-links a {
-            margin: 5px 10px;
+        footer a {
+            color: #f39c12;
+            text-decoration: none;
         }
 
+        /* ============ RESPONSIVE FIXES ============ */
         @media (max-width: 768px) {
-            header .logo {
-                font-size: 1.2em;
+
+            header {
+                flex-direction: column;
+                text-align: center;
             }
 
-            nav a {
-                font-size: 0.9em;
+            nav {
+                justify-content: center;
             }
 
-            footer p {
-                font-size: 0.8em;
+            .search-container {
+                width: 100%;
+                justify-content: center;
             }
 
             .search-container input {
-                font-size: 0.8em;
+                width: 80%; /* Search fits properly */
             }
 
-            .container {
-                padding: 15px;
-            }
-
-            .policy-details h2 {
+            .logo {
                 font-size: 1.3em;
             }
 
-            .policy-details p {
-                font-size: 1em;
-            }
-
-            .footer-links {
-                flex-direction: column;
-            }
-
-            .footer-links a {
-                margin: 5px 0;
+            nav a {
+                font-size: 0.95em;
             }
         }
     </style>
 </head>
+
 <body>
 
-    <header>
-        <div class="logo">Financial Literacy Hub</div>
-        <nav>
-            <a href="index.html">Home</a>
-            <a href="article.html">Articles</a>
-            <a href="policy.html">Policy</a>
-            <a href="video.html">Videos</a>
-            <a href="quiz.html">Quizzes</a>
-        </nav>
-        <div class="search-container">
-            <a href="search.html">
-                <input type="text" placeholder="Search in site...">
-            </a>
-        </div>
-    </header>
+<header>
+    <div class="logo">Financial Literacy Hub</div>
 
-    <div class="container">
-        <h1>Central Bank Policies</h1>
-        <div class="policy-content">
-            <p>The Central Bank's primary goal is to promote and maintain monetary stability and financial stability. It does so through a variety of policies, including controlling inflation, managing interest rates, and supervising financial institutions.</p>
-        </div>
+    <nav>
+        <a href="index.html">Home</a>
+        <a href="article.html">Articles</a>
+        <a href="policy.html">Policy</a>
+        <a href="video.html">Videos</a>
+        <a href="quiz.html">Quizzes</a>
+    </nav>
 
-        <div class="policy-details">
-            <h2>Key Policies of the Central Bank</h2>
-            <p>The Central Bank's policies are designed to promote a healthy financial ecosystem. These include:</p>
-            <ul>
-                <li><strong>Monetary Policy:</strong> The Central Bank controls inflation by adjusting interest rates, using tools like the repo rate and reverse repo rate to regulate money supply.</li>
-                <li><strong>Financial Stability:</strong> Ensures the soundness and resilience of the financial system, safeguarding against financial crises.</li>
-                <li><strong>Currency Management:</strong> The Central Bank manages the country’s currency, ensuring enough supply of legal tender notes and coins.</li>
-                <li><strong>Bank Supervision:</strong> Supervises and regulates commercial banks and financial institutions to maintain public trust and safeguard depositor interests.</li>
-                <li><strong>Exchange Rate Policy:</strong> Controls the foreign exchange market, ensuring a stable and competitive exchange rate that supports the economy.</li>
-                <li><strong>Developmental Role:</strong> The Central Bank promotes economic development through financial inclusion initiatives, such as supporting access to banking in rural areas.</li>
-            </ul>
-        </div>
+    <!-- FIXED SEARCH (removed <a> tag wrapping input) -->
+    <div class="search-container">
+        <input type="text" placeholder="Search in site..." onclick="window.location='search.html'">
     </div>
+</header>
 
-    <footer>
-        <p>&copy; 2024 Financial Literacy Hub. All rights reserved.</p>
-        <div class="footer-links">
-            <a href="contact.html">Contact Us</a> |
-            <a href="tos.html">Terms of Service</a> |
-            <a href="pp.html">Privacy Policy</a>
-        </div>
-    </footer>
+<div class="container">
+    <h1>Central Bank Policies</h1>
+    <p>
+        The Central Bank regulates monetary policy, inflation and ensures financial stability in the country.
+    </p>
+
+    <div class="policy-details">
+        <h2>Key Policies of the Central Bank</h2>
+        <ul>
+            <li><strong>Monetary Policy:</strong> Controls inflation and interest rates.</li>
+            <li><strong>Financial Stability:</strong> Prevents financial crises.</li>
+            <li><strong>Currency Management:</strong> Ensures supply of legal tender.</li>
+            <li><strong>Bank Supervision:</strong> Regulates commercial banks.</li>
+            <li><strong>Exchange Rate Policy:</strong> Maintains stable forex market.</li>
+            <li><strong>Developmental Role:</strong> Promotes financial inclusion.</li>
+        </ul>
+    </div>
+</div>
+
+<footer>
+    <p>&copy; 2024 Financial Literacy Hub. All rights reserved.</p>
+
+    <div class="footer-links">
+        <a href="contact.html">Contact Us</a>
+        <a href="tos.html">Terms of Service</a>
+        <a href="pp.html">Privacy Policy</a>
+    </div>
+</footer>
 
 </body>
 </html>
