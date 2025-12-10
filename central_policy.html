@@ -14,7 +14,7 @@
             color: #333;
         }
 
-        /* ================= HEADER ================= */
+        /* HEADER FIXED & ZOOM SAFE */
         header {
             background-color: #34495e;
             color: #fff;
@@ -22,8 +22,8 @@
             display: flex;
             justify-content: space-between;
             align-items: center;
-            flex-wrap: wrap; /* KEEP NAV + SEARCH TOGETHER ON SMALL SCREEN */
-            gap: 10px;
+            flex-wrap: wrap;   /* main fix */
+            gap: 12px;
             position: sticky;
             top: 0;
             z-index: 1000;
@@ -32,12 +32,15 @@
         .logo {
             font-size: 1.6em;
             font-weight: bold;
+            flex-shrink: 0;
         }
 
         nav {
             display: flex;
             gap: 15px;
             flex-wrap: wrap;
+            justify-content: center;
+            min-width: 280px; /* prevents breaking */
         }
 
         nav a {
@@ -50,67 +53,31 @@
             color: #f39c12;
         }
 
+        /* SEARCH BOX FIXED SIZE */
         .search-container {
             display: flex;
             align-items: center;
+            flex-shrink: 0;
         }
 
         .search-container input {
-            padding: 7px 12px;
+            padding: 5px 10px;
             border-radius: 5px;
             border: none;
             font-size: 0.9em;
-            outline: none;
+            width: 150px;     /* FIXED SMALL SIZE */
+            max-width: 150px;
         }
 
-        /* ================= MAIN ================= */
-        .container {
-            max-width: 1100px;
-            margin: 30px auto;
-            background: #fff;
-            padding: 20px;
-            border-radius: 8px;
-            box-shadow: 0 3px 8px rgba(0,0,0,0.1);
-        }
-
-        .policy-details h2 {
-            color: #2c3e50;
-        }
-
-        .policy-details ul {
-            margin-left: 20px;
-        }
-
-        /* ================= FOOTER ================= */
-        footer {
-            background-color: #34495e;
-            color: #fff;
-            text-align: center;
-            padding: 20px;
-        }
-
-        .footer-links {
-            margin-top: 10px;
-            display: flex;
-            justify-content: center;
-            gap: 15px;
-            flex-wrap: wrap;
-        }
-
-        footer a {
-            color: #f39c12;
-            text-decoration: none;
-        }
-
-        /* ============ RESPONSIVE FIXES ============ */
-        @media (max-width: 768px) {
-
+        /* ZOOM FIX: 100% → 200% */
+        @media (max-width: 1100px) {
             header {
-                flex-direction: column;
+                justify-content: center;
                 text-align: center;
             }
 
             nav {
+                width: 100%;
                 justify-content: center;
             }
 
@@ -118,69 +85,150 @@
                 width: 100%;
                 justify-content: center;
             }
+        }
 
-            .search-container input {
-                width: 80%; /* Search fits properly */
-            }
-
+        /* MOBILE FIX */
+        @media (max-width: 768px) {
             .logo {
                 font-size: 1.3em;
             }
 
             nav a {
-                font-size: 0.95em;
+                font-size: 0.9em;
+            }
+
+            .search-container input {
+                width: 150px;
+                max-width: 150px;
             }
         }
-    </style>
-</head>
 
+        /* PAGE CONTENT */
+        .container {
+            max-width: 1200px;
+            margin: 30px auto;
+            padding: 20px;
+            background-color: #fff;
+            border-radius: 8px;
+            box-shadow: 0 3px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        .policy-content {
+            text-align: left;
+            font-size: 1.1em;
+            color: #555;
+        }
+
+        .policy-details {
+            margin-top: 20px;
+        }
+
+        .policy-details h2 {
+            color: #2c3e50;
+            font-size: 1.5em;
+        }
+
+        .policy-details p {
+            margin: 10px 0;
+            line-height: 1.6;
+        }
+
+        .policy-details ul {
+            margin-left: 20px;
+        }
+
+        footer {
+            background-color: #34495e;
+            color: #fff;
+            text-align: center;
+            padding: 15px 0;
+            margin-top: 50px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        footer a {
+            color: #f39c12;
+            text-decoration: none;
+            margin: 5px;
+        }
+
+        footer a:hover {
+            text-decoration: underline;
+        }
+
+        footer p {
+            margin: 5px 0;
+            font-size: 0.9em;
+        }
+
+        .footer-links {
+            margin-top: 10px;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+
+        .footer-links a {
+            margin: 5px 10px;
+        }
+    </style>
+
+</head>
 <body>
 
-<header>
-    <div class="logo">Financial Literacy Hub</div>
+    <!-- HEADER -->
+    <header>
+        <div class="logo">Financial Literacy Hub</div>
 
-    <nav>
-        <a href="index.html">Home</a>
-        <a href="article.html">Articles</a>
-        <a href="policy.html">Policy</a>
-        <a href="video.html">Videos</a>
-        <a href="quiz.html">Quizzes</a>
-    </nav>
+        <nav>
+            <a href="index.html">Home</a>
+            <a href="article.html">Articles</a>
+            <a href="policy.html">Policy</a>
+            <a href="video.html">Videos</a>
+            <a href="quiz.html">Quizzes</a>
+        </nav>
 
-    <!-- FIXED SEARCH (removed <a> tag wrapping input) -->
-    <div class="search-container">
-        <input type="text" placeholder="Search in site..." onclick="window.location='search.html'">
+        <div class="search-container">
+            <input type="text" placeholder="Search in site..." onclick="window.location='search.html'">
+        </div>
+    </header>
+
+    <!-- MAIN CONTENT -->
+    <div class="container">
+        <h1>Central Bank Policies</h1>
+
+        <div class="policy-content">
+            <p>The Central Bank's primary goal is to maintain monetary and financial stability...</p>
+        </div>
+
+        <div class="policy-details">
+            <h2>Key Policies of the Central Bank</h2>
+            <p>The Central Bank implements several key policies:</p>
+
+            <ul>
+                <li><strong>Monetary Policy:</strong> Controls inflation using repo & reverse repo rates.</li>
+                <li><strong>Financial Stability:</strong> Ensures safe banking systems.</li>
+                <li><strong>Currency Management:</strong> Issues and manages money supply.</li>
+                <li><strong>Bank Supervision:</strong> Regulates commercial banks.</li>
+                <li><strong>Exchange Rate Policy:</strong> Maintains forex market stability.</li>
+                <li><strong>Developmental Role:</strong> Supports financial inclusion in rural areas.</li>
+            </ul>
+
+        </div>
     </div>
-</header>
 
-<div class="container">
-    <h1>Central Bank Policies</h1>
-    <p>
-        The Central Bank regulates monetary policy, inflation and ensures financial stability in the country.
-    </p>
+    <!-- FOOTER -->
+    <footer>
+        <p>&copy; 2024 Financial Literacy Hub. All rights reserved.</p>
 
-    <div class="policy-details">
-        <h2>Key Policies of the Central Bank</h2>
-        <ul>
-            <li><strong>Monetary Policy:</strong> Controls inflation and interest rates.</li>
-            <li><strong>Financial Stability:</strong> Prevents financial crises.</li>
-            <li><strong>Currency Management:</strong> Ensures supply of legal tender.</li>
-            <li><strong>Bank Supervision:</strong> Regulates commercial banks.</li>
-            <li><strong>Exchange Rate Policy:</strong> Maintains stable forex market.</li>
-            <li><strong>Developmental Role:</strong> Promotes financial inclusion.</li>
-        </ul>
-    </div>
-</div>
-
-<footer>
-    <p>&copy; 2024 Financial Literacy Hub. All rights reserved.</p>
-
-    <div class="footer-links">
-        <a href="contact.html">Contact Us</a>
-        <a href="tos.html">Terms of Service</a>
-        <a href="pp.html">Privacy Policy</a>
-    </div>
-</footer>
+        <div class="footer-links">
+            <a href="contact.html">Contact Us</a> |
+            <a href="tos.html">Terms of Service</a> |
+            <a href="pp.html">Privacy Policy</a>
+        </div>
+    </footer>
 
 </body>
 </html>
