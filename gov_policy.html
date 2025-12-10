@@ -23,33 +23,41 @@
         header {
             background-color: #34495e;
             color: #fff;
-            padding: 15px 20px;
+            padding: 12px 15px;
+
             display: flex;
+            flex-wrap: wrap;     /* Fix for zoom responsiveness */
             justify-content: space-between;
             align-items: center;
-            flex-wrap: wrap;
-            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            gap: 10px;
+            row-gap: 12px;
+
             position: sticky;
             top: 0;
             z-index: 1000;
+            width: 100%;
         }
 
-        header .logo {
-            font-size: 1.6em;
+        .logo {
+            font-size: clamp(1.2rem, 2.3vw, 1.8rem); /* Automatically resizes on zoom */
             font-weight: bold;
         }
 
+        /* NAVIGATION */
         nav {
             display: flex;
-            gap: 20px;
-            flex-wrap: wrap;
+            flex-wrap: wrap; 
             justify-content: center;
+            gap: 12px 18px;
+            width: 100%;
+            max-width: 600px;
         }
 
         nav a {
             color: #fff;
             text-decoration: none;
-            font-size: 1em;
+            font-size: clamp(0.9rem, 1.3vw, 1.1rem);
+            white-space: nowrap; /* Prevents breaking words */
         }
 
         nav a:hover {
@@ -57,36 +65,47 @@
         }
 
         /* SEARCH */
+        .search-container {
+            width: 100%;
+            display: flex;
+            justify-content: center;
+        }
+
         .search-container input {
-            padding: 7px 12px;
-            font-size: 0.9em;
+            padding: 6px 12px;
+            width: 100%;
+            max-width: 250px;
             border: none;
             border-radius: 5px;
+            font-size: clamp(0.85rem, 1vw, 1rem);
             outline: none;
         }
 
         /* MAIN CONTAINER */
         .container {
             max-width: 1200px;
+            width: 95%;
             margin: 30px auto;
             padding: 20px;
+
             background-color: #fff;
             border-radius: 8px;
             box-shadow: 0 3px 8px rgba(0, 0, 0, 0.1);
         }
 
         .container h1 {
-            font-size: 2rem;
-            color: #2c3e50;
             text-align: center;
+            font-size: clamp(1.4rem, 2.3vw, 2rem);
             margin-bottom: 20px;
+            color: #2c3e50;
         }
 
-        .policy-content p {
-            text-align: left;
-            font-size: 1.1em;
-            color: #555;
+        .policy-content p,
+        .policy-details p,
+        .policy-details ul li {
+            font-size: clamp(0.95rem, 1.2vw, 1.1rem);
             line-height: 1.6;
+            color: #555;
         }
 
         .policy-details {
@@ -94,19 +113,13 @@
         }
 
         .policy-details h2 {
+            font-size: clamp(1.2rem, 2vw, 1.6rem);
             color: #2c3e50;
-            font-size: 1.5em;
             margin-bottom: 10px;
-        }
-
-        .policy-details p {
-            margin-bottom: 10px;
-            line-height: 1.6;
         }
 
         .policy-details ul {
             margin-left: 20px;
-            line-height: 1.6;
         }
 
         /* FOOTER */
@@ -114,75 +127,41 @@
             background-color: #34495e;
             color: #fff;
             text-align: center;
-            padding: 20px 10px;
-            margin-top: 40px;
+            padding: 22px 10px;
+
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+
+        .footer-links {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 12px;
+            justify-content: center;
         }
 
         footer a {
             color: #f39c12;
             text-decoration: none;
+            font-size: clamp(0.85rem, 1vw, 1rem);
         }
 
         footer a:hover {
             text-decoration: underline;
         }
 
-        .footer-links {
-            margin-top: 10px;
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: center;
-            gap: 10px;
-        }
-
-        /* MEDIA QUERIES */
+        /* RESPONSIVE FIXES */
         @media (max-width: 900px) {
-            nav {
-                gap: 12px;
-            }
-        }
-
-        @media (max-width: 768px) {
             header {
-                flex-direction: column;
-                gap: 10px;
+                justify-content: center;
                 text-align: center;
             }
-
-            nav a {
-                font-size: 0.95em;
-            }
-
-            .container {
-                padding: 15px;
-            }
-
-            .container h1 {
-                font-size: 1.7rem;
-            }
-
-            .policy-content p,
-            .policy-details p {
-                font-size: 1em;
-            }
         }
 
-        @media (max-width: 500px) {
-            nav {
-                flex-direction: column;
-                gap: 8px;
-            }
-
-            header .logo {
-                font-size: 1.4em;
-            }
-
+        @media (max-width: 600px) {
             .search-container input {
-                width: 100%;
-            }
-
-            .container h1 {
-                font-size: 1.5rem;
+                max-width: 100%;
             }
         }
     </style>
@@ -217,15 +196,15 @@
 
         <div class="policy-details">
             <h2>Key Government Policies</h2>
-            <p>The Government of India has introduced a wide range of policies to drive economic development and address societal issues. Some of the most important policies are:</p>
+            <p>The Government of India has introduced a wide range of policies to promote development. Some of the important ones include:</p>
 
             <ul>
-                <li><strong>Financial Inclusion Policies:</strong> Programs aimed at bringing the unbanked population into the formal banking system, such as PMJDY.</li>
-                <li><strong>GST Tax Reform:</strong> Simplifying the indirect tax structure.</li>
-                <li><strong>Make in India:</strong> Boosts domestic manufacturing.</li>
-                <li><strong>Digital India:</strong> Promotes digital access and services.</li>
-                <li><strong>Swachh Bharat Abhiyan:</strong> Improves sanitation and cleanliness.</li>
-                <li><strong>Startup India:</strong> Supports entrepreneurs and startups.</li>
+                <li><strong>Financial Inclusion Policies:</strong> Bringing unbanked citizens into the formal banking system (e.g., PMJDY).</li>
+                <li><strong>GST Tax Reform:</strong> Simplifying indirect tax structure.</li>
+                <li><strong>Make in India:</strong> Boosting domestic manufacturing and investment.</li>
+                <li><strong>Digital India:</strong> Increasing access to digital services.</li>
+                <li><strong>Swachh Bharat Abhiyan:</strong> Improving sanitation and cleanliness.</li>
+                <li><strong>Startup India:</strong> Supporting entrepreneurship and innovation.</li>
             </ul>
         </div>
     </div>
@@ -239,7 +218,8 @@
             <a href="pp.html">Privacy Policy</a>
         </div>
 
-        <p>For more details, visit the official 
+        <p>
+            For more details, visit the official 
             <a href="https://www.india.gov.in/" target="_blank">Government of India website</a>.
         </p>
     </footer>
