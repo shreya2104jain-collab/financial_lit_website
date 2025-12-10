@@ -4,22 +4,30 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Government Policies</title>
+
     <style>
-        body {
-            font-family: Arial, sans-serif;
+        /* GLOBAL */
+        * {
             margin: 0;
             padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
             background-color: #f5f7fa;
             color: #333;
         }
 
+        /* HEADER */
         header {
             background-color: #34495e;
             color: #fff;
-            padding: 20px;
+            padding: 15px 20px;
             display: flex;
             justify-content: space-between;
             align-items: center;
+            flex-wrap: wrap;
             box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
             position: sticky;
             top: 0;
@@ -27,37 +35,37 @@
         }
 
         header .logo {
-            font-size: 1.5em;
+            font-size: 1.6em;
             font-weight: bold;
         }
 
         nav {
             display: flex;
             gap: 20px;
+            flex-wrap: wrap;
+            justify-content: center;
         }
 
         nav a {
             color: #fff;
             text-decoration: none;
-            font-size: 1.1em;
+            font-size: 1em;
         }
 
         nav a:hover {
             color: #f39c12;
         }
 
-        .search-container {
-            display: flex;
-            align-items: center;
-        }
-
+        /* SEARCH */
         .search-container input {
-            padding: 5px 10px;
+            padding: 7px 12px;
             font-size: 0.9em;
             border: none;
             border-radius: 5px;
+            outline: none;
         }
 
+        /* MAIN CONTAINER */
         .container {
             max-width: 1200px;
             margin: 30px auto;
@@ -67,10 +75,18 @@
             box-shadow: 0 3px 8px rgba(0, 0, 0, 0.1);
         }
 
-        .policy-content {
+        .container h1 {
+            font-size: 2rem;
+            color: #2c3e50;
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        .policy-content p {
             text-align: left;
             font-size: 1.1em;
             color: #555;
+            line-height: 1.6;
         }
 
         .policy-details {
@@ -80,43 +96,35 @@
         .policy-details h2 {
             color: #2c3e50;
             font-size: 1.5em;
+            margin-bottom: 10px;
         }
 
         .policy-details p {
-            margin: 10px 0;
+            margin-bottom: 10px;
             line-height: 1.6;
         }
 
         .policy-details ul {
             margin-left: 20px;
+            line-height: 1.6;
         }
 
+        /* FOOTER */
         footer {
             background-color: #34495e;
             color: #fff;
             text-align: center;
-            padding: 20px 0;
-            margin-top: 50px;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
+            padding: 20px 10px;
+            margin-top: 40px;
         }
 
         footer a {
             color: #f39c12;
             text-decoration: none;
-            margin: 5px;
-            font-size: 1em;
         }
 
         footer a:hover {
             text-decoration: underline;
-        }
-
-        footer p {
-            margin: 5px 0;
-            font-size: 0.9em;
         }
 
         .footer-links {
@@ -124,55 +132,67 @@
             display: flex;
             flex-wrap: wrap;
             justify-content: center;
+            gap: 10px;
         }
 
-        .footer-links a {
-            margin: 5px 10px;
+        /* MEDIA QUERIES */
+        @media (max-width: 900px) {
+            nav {
+                gap: 12px;
+            }
         }
 
         @media (max-width: 768px) {
-            header .logo {
-                font-size: 1.2em;
+            header {
+                flex-direction: column;
+                gap: 10px;
+                text-align: center;
             }
 
             nav a {
-                font-size: 0.9em;
-            }
-
-            footer p {
-                font-size: 0.8em;
-            }
-
-            .search-container input {
-                font-size: 0.8em;
+                font-size: 0.95em;
             }
 
             .container {
                 padding: 15px;
             }
 
-            .policy-details h2 {
-                font-size: 1.3em;
+            .container h1 {
+                font-size: 1.7rem;
             }
 
+            .policy-content p,
             .policy-details p {
                 font-size: 1em;
             }
+        }
 
-            .footer-links {
+        @media (max-width: 500px) {
+            nav {
                 flex-direction: column;
+                gap: 8px;
             }
 
-            .footer-links a {
-                margin: 5px 0;
+            header .logo {
+                font-size: 1.4em;
+            }
+
+            .search-container input {
+                width: 100%;
+            }
+
+            .container h1 {
+                font-size: 1.5rem;
             }
         }
     </style>
 </head>
+
 <body>
 
     <header>
         <div class="logo">Financial Literacy Hub</div>
+
         <nav>
             <a href="index.html">Home</a>
             <a href="article.html">Articles</a>
@@ -180,6 +200,7 @@
             <a href="video.html">Videos</a>
             <a href="quiz.html">Quizzes</a>
         </nav>
+
         <div class="search-container">
             <a href="search.html">
                 <input type="text" placeholder="Search in site...">
@@ -189,6 +210,7 @@
 
     <div class="container">
         <h1>Government Policies</h1>
+
         <div class="policy-content">
             <p>The Government of India implements various policies to support economic growth, healthcare, education, and infrastructure. Key policies include initiatives for financial inclusion, tax reforms, subsidies for businesses, and government schemes aimed at welfare and employment generation.</p>
         </div>
@@ -196,27 +218,31 @@
         <div class="policy-details">
             <h2>Key Government Policies</h2>
             <p>The Government of India has introduced a wide range of policies to drive economic development and address societal issues. Some of the most important policies are:</p>
+
             <ul>
-                <li><strong>Financial Inclusion Policies:</strong> Programs aimed at bringing the unbanked population into the formal banking system, such as Pradhan Mantri Jan Dhan Yojana (PMJDY).</li>
-                <li><strong>Tax Reforms:</strong> Introduction of Goods and Services Tax (GST) to simplify the indirect tax structure and ensure uniform tax rates across the country.</li>
-                <li><strong>Make in India:</strong> A policy aimed at boosting domestic manufacturing and attracting foreign investment in key sectors.</li>
-                <li><strong>Digital India:</strong> A campaign to promote digital literacy and ensure government services are accessible online.</li>
-                <li><strong>Swachh Bharat Abhiyan:</strong> A cleanliness drive launched to improve sanitation facilities and eliminate open defecation.</li>
-                <li><strong>Startup India:</strong> Policies and incentives to encourage the growth of new businesses and support entrepreneurs.</li>
+                <li><strong>Financial Inclusion Policies:</strong> Programs aimed at bringing the unbanked population into the formal banking system, such as PMJDY.</li>
+                <li><strong>GST Tax Reform:</strong> Simplifying the indirect tax structure.</li>
+                <li><strong>Make in India:</strong> Boosts domestic manufacturing.</li>
+                <li><strong>Digital India:</strong> Promotes digital access and services.</li>
+                <li><strong>Swachh Bharat Abhiyan:</strong> Improves sanitation and cleanliness.</li>
+                <li><strong>Startup India:</strong> Supports entrepreneurs and startups.</li>
             </ul>
         </div>
     </div>
 
     <footer>
         <p>&copy; 2024 Financial Literacy Hub. All rights reserved.</p>
+
         <div class="footer-links">
-            <a href="contact.html">Contact Us</a> |
-            <a href="tos.html">Terms of Service</a> |
+            <a href="contact.html">Contact Us</a>
+            <a href="tos.html">Terms of Service</a>
             <a href="pp.html">Privacy Policy</a>
         </div>
-        <p>For more details, visit the official <a href="https://www.india.gov.in/" target="_blank">Government of India website</a>.</p>
+
+        <p>For more details, visit the official 
+            <a href="https://www.india.gov.in/" target="_blank">Government of India website</a>.
+        </p>
     </footer>
 
 </body>
 </html>
-
