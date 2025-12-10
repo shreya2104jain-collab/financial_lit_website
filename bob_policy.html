@@ -1,210 +1,213 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Bank of Baroda Policy</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            margin: 0;
-            padding: 0;
-            background-color: #f5f7fa;
-            color: #333;
-        }
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Bank of Baroda Policy</title>
+<style>
+    body {
+        font-family: Arial, sans-serif;
+        margin: 0;
+        padding: 0;
+        background-color: #f5f7fa;
+        color: #333;
+    }
 
+    header {
+        background-color: #34495e;
+        color: #fff;
+        padding: 15px 20px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        flex-wrap: wrap;
+        gap: 10px;
+        box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        position: sticky;
+        top: 0;
+        z-index: 1000;
+    }
+
+    .logo {
+        font-size: 1.6em;
+        font-weight: bold;
+        flex-shrink: 0;
+    }
+
+    nav {
+        display: flex;
+        gap: 15px;
+        flex-wrap: wrap;
+        justify-content: center;
+        min-width: 280px;
+    }
+
+    nav a {
+        color: #fff;
+        text-decoration: none;
+        font-size: 1.05em;
+        white-space: nowrap;
+    }
+
+    nav a:hover {
+        color: #f39c12;
+    }
+
+    .search-container {
+        display: flex;
+        align-items: center;
+        flex-shrink: 0;
+    }
+
+    .search-container input {
+        padding: 5px 10px;
+        border-radius: 5px;
+        border: none;
+        font-size: 0.9em;
+        width: 140px;
+        max-width: 100%;
+    }
+
+    .container {
+        max-width: 1200px;
+        margin: 30px auto;
+        padding: 20px;
+        background-color: #fff;
+        border-radius: 8px;
+        box-shadow: 0 3px 8px rgba(0,0,0,0.1);
+        word-wrap: break-word;
+    }
+
+    .policy-content {
+        font-size: 1.1em;
+        color: #555;
+    }
+
+    .policy-details {
+        margin-top: 20px;
+    }
+
+    .policy-details h2 {
+        color: #2c3e50;
+        font-size: 1.5em;
+        margin-top: 20px;
+    }
+
+    .policy-details p {
+        margin: 10px 0;
+        line-height: 1.6;
+    }
+
+    .policy-details ul {
+        margin-left: 20px;
+    }
+
+    footer {
+        background-color: #34495e;
+        color: #fff;
+        text-align: center;
+        padding: 15px 10px;
+        margin-top: 50px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    footer a {
+        color: #f39c12;
+        text-decoration: none;
+        margin: 5px 10px;
+        font-size: 1em;
+    }
+
+    footer a:hover { text-decoration: underline; }
+
+    footer p { margin: 5px 0; font-size: 0.9em; }
+
+    /* Fully responsive */
+    @media (max-width: 1100px) {
         header {
-            background-color: #34495e;
-            color: #fff;
-            padding: 20px;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-            position: sticky;
-            top: 0;
-            z-index: 1000;
-        }
-
-        header .logo {
-            font-size: 1.5em;
-            font-weight: bold;
-        }
-
-        nav {
-            display: flex;
-            gap: 20px;
-        }
-
-        nav a {
-            color: #fff;
-            text-decoration: none;
-            font-size: 1.1em;
-        }
-
-        nav a:hover {
-            color: #f39c12;
-        }
-
-        .search-container {
-            display: flex;
-            align-items: center;
-        }
-
-        .search-container input {
-            padding: 5px 10px;
-            font-size: 0.9em;
-            border: none;
-            border-radius: 5px;
-        }
-
-        .container {
-            max-width: 1200px;
-            margin: 30px auto;
-            padding: 20px;
-            background-color: #fff;
-            border-radius: 8px;
-            box-shadow: 0 3px 8px rgba(0, 0, 0, 0.1);
-        }
-
-        .policy-content {
-            text-align: left;
-            font-size: 1.1em;
-            color: #555;
-        }
-
-        .policy-details {
-            margin-top: 20px;
-        }
-
-        .policy-details h2 {
-            color: #2c3e50;
-            font-size: 1.5em;
-        }
-
-        .policy-details p {
-            margin: 10px 0;
-            line-height: 1.6;
-        }
-
-        .policy-details ul {
-            margin-left: 20px;
-        }
-
-        footer {
-            background-color: #34495e;
-            color: #fff;
+            justify-content: center;
             text-align: center;
-            padding: 15px;
-            margin-top: 50px;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
         }
-
-        footer a {
-            color: #f39c12;
-            text-decoration: none;
-            margin: 0 15px;
-            font-size: 1em;
+        nav {
+            width: 100%;
+            justify-content: center;
         }
-
-        footer a:hover {
-            text-decoration: underline;
+        .search-container {
+            width: 100%;
+            justify-content: center;
+            margin-top: 5px;
         }
+    }
 
-        footer p {
-            margin: 5px 0;
-            font-size: 0.9em;
-        }
+    @media (max-width: 768px) {
+        .logo { font-size: 1.3em; }
+        nav a { font-size: 0.9em; }
+        .search-container input { width: 120px; font-size: 0.8em; }
+        .container { padding: 15px; }
+        .policy-details h2 { font-size: 1.3em; }
+        .policy-details p, .policy-content p { font-size: 1em; }
+    }
 
-        @media (max-width: 768px) {
-            header .logo {
-                font-size: 1.2em;
-            }
-
-            nav a {
-                font-size: 0.9em;
-            }
-
-            footer p {
-                font-size: 0.8em;
-            }
-
-            .search-container input {
-                font-size: 0.8em;
-            }
-
-            .container {
-                padding: 15px;
-            }
-
-            .policy-details h2 {
-                font-size: 1.3em;
-            }
-
-            .policy-details p {
-                font-size: 1em;
-            }
-        }
-    </style>
+    @media (max-width: 480px) {
+        header { flex-direction: column; gap: 10px; }
+        nav { flex-direction: column; gap: 8px; }
+        .search-container input { width: 100%; max-width: 180px; }
+    }
+</style>
 </head>
 <body>
 
-    <header>
-        <div class="logo">Financial Literacy Hub</div>
-        <nav>
-            <a href="index.html">Home</a>
-            <a href="article.html">Articles</a>
-            <a href="policy.html">Policy</a>
-            <a href="video.html">Videos</a>
-            <a href="quiz.html">Quizzes</a>
-        </nav>
-        <div class="search-container">
-            <a href="search.html">
-                <input type="text" placeholder="Search in site...">
-            </a>
-        </div>
-    </header>
+<header>
+    <div class="logo">Financial Literacy Hub</div>
+    <nav>
+        <a href="index.html">Home</a>
+        <a href="article.html">Articles</a>
+        <a href="policy.html">Policy</a>
+        <a href="video.html">Videos</a>
+        <a href="quiz.html">Quizzes</a>
+    </nav>
+    <div class="search-container">
+        <input type="text" placeholder="Search in site..." onclick="window.location='search.html'">
+    </div>
+</header>
 
-    <div class="container">
-        <h1>Bank of Baroda Policies</h1>
-        <div class="policy-content">
-            <p>Bank of Baroda offers retail banking services, business solutions, and personal banking solutions, all governed by customer-centric policies, including savings, insurance, and investment options. The bank’s policies are designed to meet the evolving needs of customers and to ensure secure, efficient banking services.</p>
-        </div>
-
-        <div class="policy-details">
-            <h2>Key Policies of Bank of Baroda:</h2>
-            <p>The Bank of Baroda implements several key policies to help its customers access essential services while ensuring smooth banking operations:</p>
-
-            <ul>
-                <li><strong>Savings Account Policy:</strong> Bank of Baroda offers various types of savings accounts including regular savings accounts, salary accounts, and senior citizen accounts, with attractive interest rates and benefits.</li>
-                <li><strong>Loan Policy:</strong> The bank has a comprehensive loan policy, offering personal loans, home loans, business loans, and car loans, with flexible repayment options.</li>
-                <li><strong>Digital Banking Policy:</strong> Bank of Baroda focuses heavily on digital banking and has introduced mobile banking, online banking, and ATM services to enhance convenience for customers.</li>
-                <li><strong>Investment Policy:</strong> The bank offers a wide range of investment products including fixed deposits, mutual funds, and government bonds, enabling customers to secure their financial future.</li>
-                <li><strong>Customer Service Policy:</strong> The bank prioritizes customer satisfaction and provides multiple channels for customers to get assistance, including customer care centers, mobile apps, and online support.</li>
-                <li><strong>Financial Inclusion Policy:</strong> Bank of Baroda promotes financial inclusion by providing services to rural areas and encouraging financial literacy among underserved communities.</li>
-            </ul>
-
-            <h2>Important Regulations:</h2>
-            <p>Bank of Baroda adheres to several financial regulations to ensure transparency, security, and fairness in all its dealings:</p>
-            <ul>
-                <li>Compliant with Reserve Bank of India (RBI) regulations on financial stability and customer protection.</li>
-                <li>Adheres to the Prevention of Money Laundering Act (PMLA) for anti-money laundering practices.</li>
-                <li>Complies with Know Your Customer (KYC) and Anti-Money Laundering (AML) regulations to prevent illegal financial activities.</li>
-                <li>Follows the Indian Banking Association (IBA) guidelines on interest rates and charges.</li>
-            </ul>
-        </div>
+<div class="container">
+    <h1>Bank of Baroda Policies</h1>
+    <div class="policy-content">
+        <p>Bank of Baroda offers retail banking services, business solutions, and personal banking solutions. Their customer-centric policies cover savings, insurance, and investment options. The policies ensure secure and efficient banking services tailored to customer needs.</p>
     </div>
 
-    <footer>
-        <p>&copy; 2024 Financial Literacy Hub. All rights reserved.</p>
-        <p>
-            <a href="contact.html">Contact Us</a> |
-            <a href="tos.html">Terms of Service</a> |
-            <a href="pp.html">Privacy Policy</a>
-        </p>
-    </footer>
+    <div class="policy-details">
+        <h2>Key Policies</h2>
+        <ul>
+            <li><strong>Savings Account Policy:</strong> Multiple savings accounts including salary and senior citizen accounts with attractive interest rates.</li>
+            <li><strong>Loan Policy:</strong> Personal, home, business, and car loans with flexible repayment options.</li>
+            <li><strong>Digital Banking Policy:</strong> Mobile banking, online banking, and ATMs for convenience.</li>
+            <li><strong>Investment Policy:</strong> Fixed deposits, mutual funds, and government bonds.</li>
+            <li><strong>Customer Service Policy:</strong> Assistance via customer care centers, mobile apps, and online support.</li>
+            <li><strong>Financial Inclusion Policy:</strong> Services for rural areas and financial literacy initiatives.</li>
+        </ul>
+
+        <h2>Important Regulations</h2>
+        <ul>
+            <li>Compliant with RBI regulations for financial stability and customer protection.</li>
+            <li>Follows the Prevention of Money Laundering Act (PMLA).</li>
+            <li>Complies with KYC and AML regulations.</li>
+            <li>Adheres to Indian Banking Association (IBA) guidelines on rates and charges.</li>
+        </ul>
+    </div>
+</div>
+
+<footer>
+    <p>&copy; 2024 Financial Literacy Hub. All rights reserved.</p>
+    <p>
+        <a href="contact.html">Contact Us</a> |
+        <a href="tos.html">Terms of Service</a> |
+        <a href="pp.html">Privacy Policy</a>
+    </p>
+</footer>
 
 </body>
 </html>
